@@ -36,7 +36,7 @@ public class BaseServiceImpl<M, E> extends Service4DAOImpl<M, E> implements Base
         }
         Pagination pagination = null;
         //默认按id排序
-        example.setOrderByClause("id desc");
+        example.setOrderByClause("id asc");
         //默认对查询进行两次遍历查询
         int depth = 2;
         for (int i = 0; i < paramAndObjects.length; i += 2) {
