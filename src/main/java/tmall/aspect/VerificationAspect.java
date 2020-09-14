@@ -51,10 +51,10 @@ public class VerificationAspect {
                 argsWithoutNullable.add(args[i]);
             }
         }
-        for (Object o : argsWithoutNullable) {
+        /*for (Object o : argsWithoutNullable) {
             if (o == null) {
                 throw new ParameterException("非法请求,参数不全");
             }
-        }
+        }*/
     }
 }
