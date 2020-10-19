@@ -16,7 +16,13 @@
                 <a href="category?id=${c.id}">${c.name}</a>
             </c:if>
         </c:forEach>
+
+
     </div>
+    <c:if test="${phone != ''}">
+    <a style="float: right!important;line-height: 35px;font-size: 16px;color: black;"
+       class="glyphicon glyphicon glyphicon-earphone">  ${phone}</a>
+    </c:if>
 </section>
 
 <section class="carousel">
@@ -30,15 +36,15 @@
         <div role="listbox" class="carousel-inner">
             <div class="item active">
                 <a  target="_blank">
-                <img src="pictures/banner/1.jpg" class="carousel carousel-image">
+                <img src="img/1.jpg" class="carousel carousel-image">
                 </a>
             </div>
             <div class="item">
                 <a  target="_blank">
-                <img src="pictures/banner/2.jpg" class="carousel-image">
+                <img src="img/2.jpg" class="carousel-image">
                 </a>
             </div>
-
+           
         </div>
 
         <div class="m-menu">
