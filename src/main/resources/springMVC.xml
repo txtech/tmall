@@ -16,18 +16,14 @@
 
     <!--启动注解识别-->
     <context:annotation-config/>
-
     <!--自动检测组件 -->
-
     <context:component-scan base-package="tmall.controller.*">
-        <context:include-filter type="annotation"
-                                expression="org.springframework.stereotype.Controller"/>
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
     <context:component-scan base-package="tmall.aspect"/>
 
     <!--启动AspectJ支持-->
     <aop:aspectj-autoproxy proxy-target-class="true" />
-
     <!-- 注解驱动 -->
     <mvc:annotation-driven />
 
