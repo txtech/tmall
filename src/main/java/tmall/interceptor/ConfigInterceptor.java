@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import tmall.service.ConfigService;
+import tmall.util.StringUtil;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Map;
@@ -20,8 +22,12 @@ public class ConfigInterceptor extends HandlerInterceptorAdapter {
             return true;
         }
         Map<String, String> config = configService.map();
+        String indexCode = config.get("index_code");
+        if(!StringUtil.isEmpty(indexCode) && indexCode.endsWith("-1")){
+            indexCode = indexCode.substring(0,indexCode.lastIndexOf("-1"));
+        }
         request.getServletContext().setAttribute("phone", config.get("index_phone"));
-        request.getServletContext().setAttribute("SEOCode", config.get("index_code"));
+        request.getServletContext().setAttribute("SEOCode", indexCode);
         request.getServletContext().setAttribute("SEOTitle", config.get("index_title"));
         request.getServletContext().setAttribute("keywords", config.get("index_keyword"));
         request.getServletContext().setAttribute("description", config.get("index_description"));
