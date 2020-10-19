@@ -20,6 +20,7 @@ public class ConfigInterceptor extends HandlerInterceptorAdapter {
             return true;
         }
         Map<String, String> config = configService.map();
+        request.getServletContext().setAttribute("phone", config.get("index_phone"));
         request.getServletContext().setAttribute("SEOCode", config.get("index_code"));
         request.getServletContext().setAttribute("SEOTitle", config.get("index_title"));
         request.getServletContext().setAttribute("keywords", config.get("index_keyword"));

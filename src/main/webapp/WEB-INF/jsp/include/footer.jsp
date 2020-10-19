@@ -163,7 +163,7 @@
             </div>
             <div class="license" style="text-align: center;">
                 <a target="_blank" href="https://beian.miit.gov.cn/"><span>网络文化经营许可证： ${(empty SEOCode)?code:SEOCode}-1</span></a>
-                <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=35021202000344"><img src="../img/beian.png"> 35021202000344</a>
+                <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=35021202000344"><img src="img/beian.png"> 35021202000344</a>
                 <br>
                 <span>厦门市同安区二环南路692号407室</span>
                 <div class="copy-right-year">Copyright© 20020-2025 ${(empty SEOTitle)?title:SEOTitle} 版权所有</div>
