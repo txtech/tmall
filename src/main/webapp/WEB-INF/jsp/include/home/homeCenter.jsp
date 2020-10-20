@@ -36,15 +36,15 @@
         <div role="listbox" class="carousel-inner">
             <div class="item active">
                 <a  target="_blank">
-                <img src="img/1.jpg" class="carousel carousel-image">
+                <img src="pictures/banner/1.jpg" class="carousel carousel-image">
                 </a>
             </div>
             <div class="item">
                 <a  target="_blank">
-                <img src="img/2.jpg" class="carousel-image">
+                <img src="pictures/banner/2.jpg" class="carousel-image">
                 </a>
             </div>
-           
+
         </div>
 
         <div class="m-menu">
