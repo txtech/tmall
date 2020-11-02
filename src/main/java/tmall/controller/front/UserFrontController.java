@@ -17,6 +17,7 @@ public class UserFrontController extends FrontBaseController {
     public String register(){
         return "register";
     }
+
     @RequestMapping("registerAdd")
     public String registerAdd(String name ,String password , Model model) throws Exception {
         String msg = null;
@@ -37,9 +38,9 @@ public class UserFrontController extends FrontBaseController {
         userService.add(user);
         return "registerSuccess";
     }
+
     @RequestMapping("login")
-    public String login(@Nullable String refer, Model model, HttpSession session)
-    {
+    public String login(@Nullable String refer, Model model, HttpSession session){
         if (refer != null) {
             model.addAttribute("refer",refer);
         }
@@ -48,6 +49,7 @@ public class UserFrontController extends FrontBaseController {
         }
         return "login";
     }
+
     @RequestMapping("loginIn")
     public String loginIn(String name ,String password , Model model, HttpSession session,String refer){
         User userFromDB = userService.get(name,password);
@@ -59,17 +61,20 @@ public class UserFrontController extends FrontBaseController {
         session.setAttribute("user",userFromDB);
         return "redirect:"+refer;
     }
+
     @RequestMapping("logout")
     public String logout(@Nullable String refer,HttpSession session){
         session.removeAttribute("user");
         return "redirect:"+refer;
     }
+
     @RequestMapping("checkLogin")
     public String checkLogin(Model model,HttpSession session){
         String msg = session.getAttribute("user")!=null?"success":"fail";
         model.addAttribute("msg",msg);
         return "msg";
     }
+
     @Auth(User.Group.unLogin)
     @RequestMapping("noAuth")
     public String noAuth(Model model){

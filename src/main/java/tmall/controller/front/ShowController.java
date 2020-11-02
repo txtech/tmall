@@ -1,30 +1,28 @@
 package tmall.controller.front;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import tmall.annotation.Nullable;
 import tmall.pojo.*;
 import tmall.util.Pagination;
-
 import java.util.List;
 
 @Controller
 @RequestMapping("/")
 public class ShowController extends FrontBaseController {
+
     @RequestMapping("")
     public String home(Model model) throws Exception {
         Pagination pagination = new Pagination();
         pagination.setCount(13);
-        List<Category> categories = categoryService.
-                list("depth",1,"pagination",pagination,"recommend_gt",0, "order", "recommend desc, id desc");
+        List<Category> categories = categoryService.list("depth",1,"pagination",pagination,"recommend_gt",0, "order", "recommend desc, id desc");
         for(Category category:categories){
-            category.setProducts(productService
-                    .list("cid",category.getId(),"stock_gt",0));
+            category.setProducts(productService.list("cid",category.getId(),"stock_gt",0));
         }
         model.addAttribute("categories",categories);
         return "home";
     }
+
     @RequestMapping("product")
     public String product(Integer id, Model model) throws Exception {
         Product product = (Product) productService.get(id);
@@ -39,6 +37,7 @@ public class ShowController extends FrontBaseController {
         model.addAttribute("product",product);
         return "product";
     }
+
     @RequestMapping("category")
     public String category(Integer id, @Nullable String sort, Model model) throws Exception {
         Category category = (Category) categoryService.get(id);
@@ -59,6 +58,7 @@ public class ShowController extends FrontBaseController {
         model.addAttribute("keyword",keyword);
         return "search";
     }
+
     private String handleSort(String sort){
         sort = sort==null?"":sort;
         String column = "";

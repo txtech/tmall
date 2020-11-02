@@ -19,6 +19,7 @@ import java.util.regex.Pattern;
 @Controller
 @RequestMapping("/")
 public class OrderFrontController extends FrontBaseController {
+
     //购物车相关
     @RequestMapping("addCart")
     public String addCart(Integer pid, Integer num, Model model, HttpSession session) throws Exception {
@@ -26,11 +27,9 @@ public class OrderFrontController extends FrontBaseController {
         User user = (User) session.getAttribute("user");
         String msg;
         //获取原来就在购物车的数据
-        CartItem cartItem = (CartItem) cartItemService
-                .getOne("uid", user.getId(), "pid", product.getId());
+        CartItem cartItem = (CartItem) cartItemService.getOne("uid", user.getId(), "pid", product.getId());
         Boolean isInDB = cartItem != null;
         //判断是否超出库存
-
         if (isInDB) {
             num += cartItem.getNumber();
         } else {
@@ -38,22 +37,18 @@ public class OrderFrontController extends FrontBaseController {
             cartItem.setProduct(product);
             cartItem.setUser(user);
         }
-
         if (num > product.getStock()) {
             msg = "OutOfStock";
             model.addAttribute("msg", msg);
             return "msg";
         }
-
         cartItem.setNumber(num);
         cartItem.setSum(product.getNowPrice().subtract(new BigDecimal(num)));
-
         if (isInDB) {
             cartItemService.update(cartItem);
         } else {
             cartItemService.add(cartItem);
         }
-
         msg = "success";
         model.addAttribute("msg", msg);
         return "msg";
@@ -134,11 +129,9 @@ public class OrderFrontController extends FrontBaseController {
             }
             // 检查
             checkUser(user, cartItem.getUser());
-
             totalNum += cartItem.getNumber();
             sum = sum.add(cartItem.getSum());
             cartItems.add(cartItem);
-
         }
         session.setAttribute("cartItems", cartItems);
         model.addAttribute("totalNum", totalNum);
@@ -147,10 +140,7 @@ public class OrderFrontController extends FrontBaseController {
     }
 
     @RequestMapping("createOrder")
-    public String createOrder(String address, String post, String receiver,
-                              String mobile,
-                              String userMessage,
-                              HttpSession session) throws Exception {
+    public String createOrder(String address, String post, String receiver,String mobile,String userMessage,HttpSession session) throws Exception {
         List<CartItem> cartItems = (List<CartItem>) session.getAttribute("cartItems");
         User user = (User) session.getAttribute("user");
         //简单校验下手机
