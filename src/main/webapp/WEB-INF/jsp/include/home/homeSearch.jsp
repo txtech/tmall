@@ -6,9 +6,7 @@
 <script src="js/index.js"></script>
 
 <header class="index-top">
-    <a href="./" class="logo">
-       <!--  <img src="img/logo.png"> -->
-    </a>
+    <a href="./" class="logo"></a>
     <div class="search">
         <form action="search" >
         <input type="text" value="请输入想要的商品名称" name="keyword">
@@ -21,7 +19,5 @@
                 </c:if>
             </c:forEach>
         </ul>
-
     </div>
-
 </header>

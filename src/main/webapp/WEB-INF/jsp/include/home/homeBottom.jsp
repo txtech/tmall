@@ -25,6 +25,5 @@
             </div>
         </c:if>
     </c:forEach>
-
     <img src="img/end.png" class="end-png" id="endpng">
 </main>
