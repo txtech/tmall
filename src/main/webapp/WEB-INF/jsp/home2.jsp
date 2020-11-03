@@ -10,25 +10,24 @@
 	<title>首页-${website_name}</title>
 	<meta name="keywords" content="${website_name}">
 	<meta name="description" content="${website_name}">
-	<link rel="stylesheet" type="text/css" href="http://fujia.xyz/Public/ws02/base.css">
-	<link rel="stylesheet" type="text/css" href="http://fujia.xyz/Public/ws02/index.css">
-	<link rel="stylesheet" type="text/css" href="http://fujia.xyz/Public/ws02/layui.css">
-	<link rel="stylesheet" type="text/css" href="http://fujia.xyz/Public/ws02/layer.css" id="layui_layer_skinlayercss" style="">
-	<link rel="stylesheet" type="text/css" href="http://fujia.xyz/Public/ws02/base.css">
-	<link rel="stylesheet" type="text/css" href="http://fujia.xyz/Public/ws02/footer.css">
+	<link rel="stylesheet" type="text/css" href="home2/base.css">
+	<link rel="stylesheet" type="text/css" href="home2/index.css">
+	<link rel="stylesheet" type="text/css" href="home2/layui.css">
+	<link rel="stylesheet" type="text/css" href="home2/base.css">
+	<link rel="stylesheet" type="text/css" href="home2/footer.css">
+	<link rel="stylesheet" type="text/css" href="home2/layer.css" id="layui_layer_skinlayercss" style="">
 
-	<script src="http://fujia.xyz/Public/ws02/jquery-1.js" type="text/javascript" charset="utf-8"></script>
-	<script src="http://fujia.xyz/Public/ws02/swiper.js"></script>
-	<script src="http://fujia.xyz/Public/ws02/ellipsisMore.js"></script>
-	<script src="http://fujia.xyz/Public/ws02/getBrowerInfo.js"></script>
-	<script src="http://fujia.xyz/Public/ws02/global.js"></script>
-	<script src="http://fujia.xyz/Public/ws02/pc_common.js"></script>
-	<script src="http://fujia.xyz/Public/ws02/jquery-2.js"></script>
-	<script src="http://fujia.xyz/Public/ws02/layer-min.js"></script>
-	<script src="http://fujia.xyz/Public/ws02/layui.js"></script>
-	<script src="http://fujia.xyz/Public/ws02/velocity.js"></script>
-	<script src="http://fujia.xyz/Public/ws02/velocity_002.js"></script>
-	<script src="http://fujia.xyz/Public/ws02/common.js" type="text/javascript" charset="utf-8"></script>
+	<script src="home2/swiper.js"></script>
+	<script src="home2/global.js"></script>
+	<script src="home2/jquery-2.js"></script>
+	<script src="home2/velocity.js"></script>
+	<script src="home2/pc_common.js"></script>
+	<script src="home2/layer-min.js"></script>
+	<script src="home2/velocity_002.js"></script>
+	<script src="home2/ellipsisMore.js"></script>
+	<script src="home2/getBrowerInfo.js"></script>
+	<script src="home2/jquery-1.js" type="text/javascript" charset="utf-8"></script>
+	<script src="home2/common.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
 <body class="gray_f5" style="padding-bottom: 375px; min-height: 550px;">
@@ -225,7 +224,7 @@
 
 		<div class="footer-bottom">
 			<div class="tpshop-service">
-				<img src="http://fujia.xyz/Public/ws02/footer.png" alt="" class="w-100">
+				<img src="home2/footer.png" alt="" class="w-100">
 			</div>
 			<div class="w1224 footer-link clearfix">
 				<div class="contact-us border-box">
