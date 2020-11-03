@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>南京市福佳服饰有限公司</title>
+    <meta name="Keywords" content="南京市福佳服饰有限公司"/>
+    <meta name="Description" content="南京市福佳服饰有限公司"/>
+    <script src="http://fujia.xyz/Public/ws/jquery-1.js"></script>
+    <script src="http://fujia.xyz/Public/ws/global.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://fujia.xyz/Public/ws02/footer.css">
+    <link href="http://fujia.xyz/Public/website/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://fujia.xyz/Public/website/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="http://fujia.xyz/Public/website/css/non-responsive.css" rel="stylesheet">
+    <script type="text/javascript" src="http://fujia.xyz/Public/website/js/jquery.min.js"></script>
+    <script type="text/javascript" src="http://fujia.xyz/Public/website/js/bootstrap.js"></script>
+    <script type="text/javascript" src="http://fujia.xyz/Public/website/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://fujia.xyz/Public/website/jsother/transition.js"></script>
+    <script type="text/javascript" src="http://fujia.xyz/Public/website/jsother/alert.js"></script>
+    <script type="text/javascript" src="http://fujia.xyz/Public/website/jsother/button.js"></script>
+    <script type="text/javascript" src="http://fujia.xyz/Public/website/jsother/carousel.js"></script>
+    <script type="text/javascript" src="http://fujia.xyz/Public/website/jsother/collapse.js"></script>
+    <script type="text/javascript" src="http://fujia.xyz/Public/website/jsother/dropdown.js"></script>
+    <script type="text/javascript" src="http://fujia.xyz/Public/website/jsother/modal.js"></script>
+    <script type="text/javascript" src="http://fujia.xyz/Public/website/jsother/tooltip.js"></script>
+    <script type="text/javascript" src="http://fujia.xyz/Public/website/jsother/popover.js"></script>
+    <script type="text/javascript" src="http://fujia.xyz/Public/website/jsother/scrollspy.js"></script>
+    <script type="text/javascript" src="http://fujia.xyz/Public/website/jsother/tab.js"></script>
+    <script type="text/javascript" src="http://fujia.xyz/Public/website/jsother/affix.js"></script>
+    <link rel="stylesheet" href="http://fujia.xyz/Public/ws/index.css" type="text/css">
+    <link rel="stylesheet" href="http://fujia.xyz/Public/ws/page.css" type="text/css">
+    <link rel="stylesheet" href="http://fujia.xyz/Public/ws/cate.css" type="text/css">
+    <link rel="stylesheet" href="http://fujia.xyz/Public/ws/helpcenter.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="http://fujia.xyz/Public/ws02/tpshop.css">
+    <script src="http://fujia.xyz/Public/ws02/jquery-1.js" type="text/javascript" charset="utf-8"></script>
+    <script src="http://fujia.xyz/Public/ws02/layer-min.js"></script>
+    <link rel="stylesheet" href="http://fujia.xyz/Public/ws02/layer.css" id="layui_layer_skinlayercss" style="">
+    <script src="http://fujia.xyz/Public/ws02/global.js"></script>
+    <script src="http://fujia.xyz/Public/ws02/pc_common.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://fujia.xyz/Public/ws02/base.css">
+    <script>
+        function showHelp(id){
+            document.getElementById("help-menu-1").style.display ='none';
+            document.getElementById("help-menu-2").style.display ='none';
+            document.getElementById("help-menu-3").style.display ='none';
+            document.getElementById("help-menu-4").style.display ='none';
+            document.getElementById("help-menu-5").style.display ='none';
+            document.getElementById("help-menu-6").style.display ='none';
+            document.getElementById("help-menu-"+id).style.display = "block";
+        }
+        // 延时加载二维码图片
+        jQuery(function($) {
+            var afterUrl =  window.location.search.substring(1);
+            showHelp(afterUrl)
+            $('img[img-url]').each(function() {
+                var _this = $(this),
+                    url = _this.attr('img-url');
+                _this.attr('src', url);
+            });
+        });
+        $(function() {
+            // 保持footer在底部
+            $('body').css({
+                'padding-bottom': $('.footer-bottom').height(),
+                'min-height': $('html').height() - $('.footer-bottom').height()
+            });
+        })
+    </script>
+</head>
+
+<body>
+<div class="w main" style="width: 1200px; margin: 0 auto;">
+    <!-- 面包屑导航 -->
+    <div class="layout ov-hi">
+        <div class="breadcrumb-area">
+            <p class="f_l">当前位置：</p>
+            <a href="/">首页 &gt;</a>
+            <a>帮助信息</a>
+        </div>
+    </div>
+
+    <!-- 帮助中心左侧菜单 -->
+    <div class="subside-box" style="min-height: 500px;">
+        <div class="subside-in">
+            <dl class="subside-mod on">
+                <dt class="title">帮助信息<b class="icon02"></b>
+                </dt>
+                <dd class="subside-cnt">
+                    <ul class="subside-list">
+                        <li class="list-item"><a class="keyWordsFiltering" onclick="showHelp(1)">帮助</a></li>
+                        <li class="list-item"><a class="keyWordsFiltering" onclick="showHelp(2)">配送服务</a></li>
+                        <li class="list-item"><a class="keyWordsFiltering" onclick="showHelp(3)">售后服务</a></li>
+                        <li class="list-item"><a class="keyWordsFiltering" onclick="showHelp(4)">新手指南</a></li>
+                        <li class="list-item"><a class="keyWordsFiltering" onclick="showHelp(5)">发票制度</a></li>
+                        <li class="list-item"><a class="keyWordsFiltering" onclick="showHelp(6)">找回密码</a></li>
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+    </div>
+
+    <!-- 帮助中心详情 -->
+    <div class="content" id="help-menu-1" style="display: none">
+        <div class="contxt">
+            <div class="help-tit1">常见问题</div>
+            <div class="help_box">
+                <div class="keyWordsFiltering"><p><img src="http://fujia.xyz/Uploads/1592466461971098.jpg" title="1592466461971098.jpg" alt="1.jpg"/></p></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 帮助中心详情 -->
+    <div class="content" id="help-menu-2" style="display: none">
+        <div class="contxt">
+            <div class="help-tit1">配送范围及时间</div>
+            <div class="help_box">
+                <div class="keyWordsFiltering"><table width="820" border="1"><tbody><tr class="firstRow"><td width="430" align="center"><strong>区域</strong></td><td width="384" align="center"><strong>时效（约）</strong></td></tr><tr><td><p>浙江、上海、江苏、安徽</p></td><td align="center">1-3天</td></tr><tr><td>北京、天津、广东、福建、山东</td><td align="center">3-5天</td></tr><tr><td>河南、河北、湖南、湖北、江西</td><td align="center">3-5天</td></tr><tr><td>广西、山西、陕西</td><td align="center">3-5天</td></tr><tr><td>重庆、云南、贵州、甘肃</td><td align="center">5-7天</td></tr><tr><td>四川、海南、辽宁、吉林、黑龙江</td><td align="center">5-7天</td></tr></tbody></table></div>
+            </div>
+        </div>
+        <div class="contxt">
+            <div class="help-tit1">配送方式</div>
+            <div class="help_box">
+                <div class="keyWordsFiltering"><p>&nbsp;本站指定物流，小件为邮政速递、顺丰速递等，大件为德邦物流，一般商品为国内段运费到付，除特殊说明产品外。</p></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 帮助中心详情 -->
+    <div class="content" id="help-menu-3" style="display: none">
+        <div class="contxt">
+            <div class="help-tit1">退换货说明</div>
+            <div class="help_box">
+                <div class="keyWordsFiltering"><p>退换货说明：</p><p>消费者向本站提出退换货申请，本站通过后台系统向海关提出申请，海关审核同意后，本站通知消费者将商品回寄到保税区监管仓库，（由于监管仓库是一个特殊区域，目前只允许试点物流企业顺丰速递和邮政速递进入，因此消费者回寄时必须选择这两家快递），监管仓库收货后，核对商品信息，反馈给我们，我们确认无误后，完成退换货。</p><p>&nbsp;</p><p>我们承诺符合以下情况，商品因质量问题，自售出之日（以实际收货日期为准）起7日内可以退货，15日内可以换货，客户可登陆“我的订单”点击“申请退换货”，自助完成退换货申请</p><p>A.国家《三包》法规所规定的非人为质量问题；</p><p>B.经由生产厂家指定或特约售后服务中心检测确认，并出具检测报告（如售后服务中心无法提供检测报告，则需提供商品检测或故障单）；</p><p>C.商品外包装完整未损坏，商品及其标配配件、赠品（如购买时有赠品）、说明书、保修凭证和发票均齐全</p><p>D.如果成套商品（含赠品）中有部分商品存在质量问题，在办理退换货时，必须提供成套商品</p><p>运费说明：</p><p>自客户收到商品起7日内因质量问题退货；15日内因质量问题换货，通过快递寄回商品而产生的运费将返还至客户账户中（不承担保价和当天件产生的费用，由非质量问题造成的退换货有客户自行承担运费）。</p><p>&nbsp;</p><p>以下情况本网站恕不提供退换货服务：</p><p>A.任何非由本商城出售的商品（商品序列号不符合）；</p><p>B.超过国家《三包》法规中规定的退换货的有效期；</p><p>C.商品已使用（有质量问题除外）或为正常使用磨损；</p><p>D.商品外包装不完整或损坏，标配配件、赠品（如购买时有赠品）或说明书不完整，保修凭证和发票任一缺失或涂改，保修凭证上的商品型号或序列号与商品实物不符；</p><p>E.擅自撕毁或涂改商品标贴、序列号、防伪标记等影响二次销售；</p><p>F.未经授权的疏忽、误用、滥用、拆装、碰撞、进液、事故、改动、不正确的安装或保管而导致的商品质量问题；</p><p>G.由非生产厂商指定或授权维修点进行拆装或维修而导致的商品质量问题；</p><p>&nbsp;</p><p>服务承诺：</p><p>本商城售后部门在收到客户寄回的商品起15个工作日之内完成退换货申请的处理。*特殊商品如有另行规定，以商品页面保修条款中的保修政策为准。</p><p><br/></p></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 帮助中心详情 -->
+    <div class="content" id="help-menu-4"  style="display: none">
+        <div class="contxt">
+            <div class="help-tit1">购物须知</div>
+            <div class="help_box">
+                <div class="keyWordsFiltering"><p><img src="http://fujia.xyz/Uploads/1592474501123380.jpg" title="1592474501123380.jpg" alt="gouwu_01.jpg"/><img src="http://fujia.xyz/Uploads/1592474508110036.jpg" title="1592474508110036.jpg" alt="gouwu_02.jpg"/></p></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content" id="help-menu-5"  style="display: none">
+        <div class="contxt">
+            <div class="help-tit1">发票制度</div>
+            <div class="help_box">
+                <div class="keyWordsFiltering"><p>顾客在跨境电商企业平台购买商品等同于国外购物，因此无法提供国内税务机关监制的纸质发票。您所购买的物品在包装箱里会有发货清单，详细描述了您所购买的产品名称、数量、金额、税款等。如有更多的“发票”问题请咨询客服。</p></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content" id="help-menu-6"  style="display: none">
+        <div class="contxt">
+            <div class="help-tit1">找回密码</div>
+            <div class="help_box">
+                <div class="keyWordsFiltering"><p><img src="http://fujia.xyz/Uploads/1592474059496715.jpg" title="1592474059496715.jpg" alt="2.jpg"/></p></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="clear"></div>
+</div>
+
+<div class="footer-bottom">
+    <div class="tpshop-service">
+        <img src="http://fujia.xyz/Public/ws02/footer.png" alt="" class="w-100">
+    </div>
+</div>
+</body>
+</html>

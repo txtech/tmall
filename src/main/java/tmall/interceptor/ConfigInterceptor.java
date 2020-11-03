@@ -33,6 +33,7 @@ public class ConfigInterceptor extends HandlerInterceptorAdapter {
         request.getServletContext().setAttribute("keywords", config.get("index_keyword"));
         request.getServletContext().setAttribute("description", config.get("index_description"));
         request.getServletContext().setAttribute("website_name", config.get("website_name"));
+        request.getServletContext().setAttribute("websiteAddress", config.get("website_address"));
         request.getServletContext().setAttribute("productImgDir", config.get("path_product_img"));
         request.getServletContext().setAttribute("categoryImgDir", config.get("path_category_img"));
         return true;
