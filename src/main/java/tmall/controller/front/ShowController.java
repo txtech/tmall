@@ -1,10 +1,14 @@
 package tmall.controller.front;
+import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import tmall.annotation.Nullable;
 import tmall.pojo.*;
 import tmall.util.Pagination;
+import tmall.util.StringUtil;
+
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
@@ -12,7 +16,7 @@ import java.util.List;
 public class ShowController extends FrontBaseController {
 
     @RequestMapping("")
-    public String home(Model model) throws Exception {
+    public String home(Model model, HttpServletRequest request) throws Exception {
         Pagination pagination = new Pagination();
         pagination.setCount(13);
         List<Category> categories = categoryService.list("depth",1,"pagination",pagination,"recommend_gt",0, "order", "recommend desc, id desc");
@@ -20,7 +24,19 @@ public class ShowController extends FrontBaseController {
             category.setProducts(productService.list("cid",category.getId(),"stock_gt",0));
         }
         model.addAttribute("categories",categories);
-        return "home";
+        String websiteMode = (String) request.getServletContext().getAttribute("websiteMode");
+        if(StringUtil.isEmpty(websiteMode)){
+            return "home1";
+        }
+        if(websiteMode.equalsIgnoreCase("1")){
+            return "home1";
+        }else if(websiteMode.equalsIgnoreCase("2")){
+            return "home2";
+        }else if(websiteMode.equalsIgnoreCase("3")){
+            return "home3";
+        }else{
+            return "home1";
+        }
     }
 
     @RequestMapping("product")
