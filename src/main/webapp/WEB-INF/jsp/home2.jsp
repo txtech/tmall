@@ -46,7 +46,12 @@
 			  <li>
 				<a target="_blank" href="myOrder">我的订单</a>
 			  </li>
-			  <li class="spacer"></li>
+				<li>
+					<c:if test="${user.group=='admin' || user.group=='superAdmin'}">
+						<a href="admin/">网站后台</a>
+					</c:if>
+				</li>
+			  <li class="spacer"> </li>
 			</ul>
 		  </div>
 		</div>
