@@ -87,7 +87,7 @@
 
         <div class="footer-desc" id="footer-desc">
             <div class="desc-column">
-                ${(em <span class="desc-column-title" id="gw" style=" cursor: pointer">购物指南</span>
+                <span class="desc-column-title" id="gw" style=" cursor: pointer">购物指南</span>
                 <%--  <a href="#nowhere">免费注册</a>
                   <a href="#nowhere">开通支付宝</a>
                   <a href="#nowhere">支付宝充值</a>--%>
