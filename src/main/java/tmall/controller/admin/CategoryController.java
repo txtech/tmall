@@ -20,8 +20,7 @@ public class CategoryController extends AdminBaseController {
     @Auth(User.Group.admin)
     @RequestMapping("list")
     public String list(Model model, Pagination pagination) throws Exception {
-        List<Category> categories = categoryService.
-                list("pagination", pagination, "order", "recommend desc, id desc");
+        List<Category> categories = categoryService.list("pagination", pagination, "order", "recommend desc, id desc");
         model.addAttribute("categories", categories);
         return "admin/listCategory";
     }
