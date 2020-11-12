@@ -28,8 +28,7 @@ public class CategoryNamesBelowSearchInterceptor extends HandlerInterceptorAdapt
         }
         Pagination pagination = new Pagination();
         pagination.setCount(7);
-        List<Category> cs = categoryService
-                .list("depth", 1, "pagination", pagination, "recommend_gt", 0);
+        List<Category> cs = categoryService.list("depth", 1, "pagination", pagination, "recommend_gt", 0,"order", "recommend desc, id desc");
         request.getServletContext().setAttribute("cs", cs);
         return true;
     }
