@@ -26,8 +26,7 @@ public class CategoryController extends AdminBaseController {
     }
 
     @RequestMapping("add")
-    public String add(String name, Integer recommend,
-                      UploadedImageFile uploadedImageFile) throws Exception {
+    public String add(String name, Integer recommend,UploadedImageFile uploadedImageFile) throws Exception {
         Category c = new Category();
         c.setName(name);
         c.setRecommend(recommend);
@@ -38,9 +37,11 @@ public class CategoryController extends AdminBaseController {
 
     @Auth(User.Group.admin)
     @RequestMapping("edit")
-    public String edit(Integer id, Model model) throws Exception {
+    public String edit(Integer id, Model model, HttpSession session) throws Exception {
         Category category = (Category) categoryService.get(id);
         model.addAttribute(category);
+        //清空搜索栏下的cs缓存
+        session.removeAttribute("cs");
         return "admin/editCategory";
     }
 
