@@ -12,11 +12,10 @@
         <button class="search-button" type="submit">搜索</button>
         </form>
         <ul class="search-below">
-            <c:forEach items="${cs}" var="c" varStatus="vs">
+           <c:forEach items="${cs}" var="c" varStatus="vs">
                 <li><a href="category?id=${c.id}">${c.name}</a></li>
             </c:forEach>
         </ul>
-
     </div>
 
 </header>
