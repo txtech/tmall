@@ -166,7 +166,7 @@
                 <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=35021202000344"><img src="img/beian.png"> 35021202000344</a>
                 <br>
                 <span>${(empty websiteAddress)?'厦门市同安区二环南路692号407室':websiteAddress}</span>
-                <div class="copy-right-year">Copyright© 20020-2025 pty SEOTitle)?title:SEOTitle} 版权所有</div>
+                <div class="copy-right-year">Copyright© 20020-2025 ${(empty SEOTitle)?title:SEOTitle} 版权所有</div>
             </div>
         </div>
     </div>
