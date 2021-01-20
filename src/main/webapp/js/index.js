@@ -13,6 +13,8 @@ $(function () {
         $(".d-menu[cid=" + cid + "]").hide();
         $(this).find("a,span").css("color", "");
     });
+
+
     $(".d-menu").mouseenter(function () {
         $(this).show();
         var cid = $(this).attr("cid");

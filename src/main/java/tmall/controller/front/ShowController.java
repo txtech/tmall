@@ -68,8 +68,7 @@ public class ShowController extends FrontBaseController {
         if(keyword.length()==0) {
             return "search";
         }
-        List<Product> products = productService
-                .list("name_like",keyword,"order",handleSort(sort),"stock_gt",0);
+        List<Product> products = productService.list("name_like",keyword,"order",handleSort(sort),"stock_gt",0);
         model.addAttribute("products",products);
         model.addAttribute("keyword",keyword);
         return "search";
