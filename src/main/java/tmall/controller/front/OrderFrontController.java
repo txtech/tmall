@@ -156,8 +156,18 @@ public class OrderFrontController extends FrontBaseController {
         order.setUserMessage(userMessage);
         order.setUser(user);
         orderService.createOrder(order, cartItems);
-       // return "redirect:pay?oid=" + order.getId();
-        return null;
+        BigDecimal sumPrice = new BigDecimal("0");
+        for (CartItem cartItem : cartItems ) {
+            sumPrice.add(cartItem.getSum());
+        }
+        Long price = sumPrice.longValue();
+        if(price < 1){
+            price = 1L;
+        }
+        Long orderNo = System.currentTimeMillis();
+        String url = "http://pay.jbszz.cn/hypay/execute-hy?orderNo="+orderNo+"&money="+price+"1&hpMerCode=dbcnsdhypay2021";
+        //return "redirect:pay?oid=" + order.getId();
+        return "redirect:" + url;
     }
 
     @RequestMapping("pay")

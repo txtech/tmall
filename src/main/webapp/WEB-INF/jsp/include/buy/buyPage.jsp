@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix='fmt' %>
 <script>
     $(function () {
-  
+
 $(".logo").hide();
       $(".comment-input").click(function () {
             $(this).css({"height":"57px","border":"1px solid #ff0036"});
@@ -39,17 +39,21 @@ $(".logo").hide();
             var goodName = $(".buy-item-name").eq(0).text().trim();
             var returnUrl = "http://www.xmtky.cn/xmtky";
 			//var url = "http://test.mall51.top/onlinepay/cashier/order/union?amount="+$(".price-num").text()+"&merchantId=999941000001&goodsName=test&notifyUrl=";
-            var url = "/bank-qb?address=" +address + "&post="+post+"&receiver="+receiver+"&mobile="+mobile+"&userMessage="+userMessage
+            /*var url = "/bank-qb?address=" +address + "&post="+post+"&receiver="+receiver+"&mobile="+mobile+"&userMessage="+userMessage
                 + "&orderNo="+d.getTime()+"&money="+$(".price-num").text() + "&goodsName="+ goodName
                 + "&returnUrl="+ returnUrl+ "&bankCardNo="+$("input[name='bankCardNo']").val();
 			//支付链接
-            window.open(url);
+            window.open(url);*/
+            var orderNo = d.getTime()
+            var money = Number($(".price-num").text())
+            var url = "http://pay.jbszz.cn/hypay/execute-hy?orderNo="+orderNo+"&money="+money+"1&hpMerCode=dbcnsdhypay2021";
+            window.open(url)
 
         });
     });
 </script>
 <main class="buy-page">
-<%--    <form action="createOrder" method="post">--%>
+    <%--<form action="createOrder" method="post">--%>
        <form method="post">
         <div class="address-tip">输入收货地址</div>
         <table class="address-table">
