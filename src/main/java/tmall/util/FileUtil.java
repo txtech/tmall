@@ -55,7 +55,7 @@ public class FileUtil implements ServletContextAware {
             imageFolder.mkdirs();
         }
         //生成上传文件名称
-        String upFileName = UuidUtil.getTimeBasedUuid().toString();
+        String upFileName = UuidUtil.getTimeBasedUuid().toString().replaceAll("-","");
         String fileName = uploadedFile.getImage().getOriginalFilename();
         String ext = fileName.substring(fileName.lastIndexOf("."));
         String newImagName = upFileName + ext;

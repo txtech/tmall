@@ -62,7 +62,6 @@ public class ProductImageController extends AdminBaseController {
     @RequestMapping("add")
     @Auth(User.Group.admin)
     public String add(Integer pid, String type, UploadedImageFile uploadedImageFile) throws Exception {
-
         log.info("add img");
         UploadFileInfo uploadFileInfo= fileUtil.uploadFile(uploadedImageFile,"product");
         ProductImage productImage = new ProductImage();

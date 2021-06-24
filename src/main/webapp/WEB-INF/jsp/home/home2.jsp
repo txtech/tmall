@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="../include/header.jsp"%>
 <c:set var="title" value="首页 - ${website_name}" />
 <!DOCTYPE html>
@@ -9,24 +10,24 @@
 	<title>首页-${website_name}</title>
 	<meta name="keywords" content="${website_name}">
 	<meta name="description" content="${website_name}">
-	<link rel="stylesheet" type="text/css" href="home2/base.css">
-	<link rel="stylesheet" type="text/css" href="home2/index.css">
-	<link rel="stylesheet" type="text/css" href="home2/layui.css">
-	<link rel="stylesheet" type="text/css" href="home2/base.css">
-	<link rel="stylesheet" type="text/css" href="home2/footer.css">
-	<link rel="stylesheet" type="text/css" href="home2/layer.css" id="layui_layer_skinlayercss" style="">
+	<link rel="stylesheet" type="text/css" href="${contextPath}/home2/base.css">
+	<link rel="stylesheet" type="text/css" href="${contextPath}/home2/index.css">
+	<link rel="stylesheet" type="text/css" href="${contextPath}/home2/layui.css">
+	<link rel="stylesheet" type="text/css" href="${contextPath}/home2/base.css">
+	<link rel="stylesheet" type="text/css" href="${contextPath}/home2/footer.css">
+	<link rel="stylesheet" type="text/css" href="${contextPath}/home2/layer.css" id="layui_layer_skinlayercss" style="">
 
-	<script src="home2/swiper.js"></script>
-	<script src="home2/global.js"></script>
-	<script src="home2/jquery-2.js"></script>
-	<script src="home2/velocity.js"></script>
-	<script src="home2/pc_common.js"></script>
-	<script src="home2/layer-min.js"></script>
-	<script src="home2/velocity_002.js"></script>
-	<script src="home2/ellipsisMore.js"></script>
-	<script src="home2/getBrowerInfo.js"></script>
-	<script src="home2/jquery-1.js" type="text/javascript" charset="utf-8"></script>
-	<script src="home2/common.js" type="text/javascript" charset="utf-8"></script>
+	<script src="${contextPath}/home2/swiper.js"></script>
+	<script src="${contextPath}/home2/global.js"></script>
+	<script src="${contextPath}/home2/jquery-2.js"></script>
+	<script src="${contextPath}/home2/velocity.js"></script>
+	<script src="${contextPath}/home2/pc_common.js"></script>
+	<script src="${contextPath}/home2/layer-min.js"></script>
+	<script src="${contextPath}/home2/velocity_002.js"></script>
+	<script src="${contextPath}/home2/ellipsisMore.js"></script>
+	<script src="${contextPath}/home2/getBrowerInfo.js"></script>
+	<script src="${contextPath}/home2/jquery-1.js" type="text/javascript" charset="utf-8"></script>
+	<script src="${contextPath}/home2/common.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
 <body class="gray_f5" style="padding-bottom: 375px; min-height: 550px;">
@@ -39,7 +40,7 @@
 			</div>
 			<ul class="top-ri-header fr ">
 			  <li class="top-min-cart border-box" id="hd-my-cart">
-				<%--<a target="_blank" href="cart">我的购物车</a>--%>
+				<a target="_blank" href="cart">我的购物车</a>
 			  </li>
 			  <li class="spacer"></li>
 			  <li>
@@ -47,7 +48,7 @@
 			  </li>
 				<li>
 					<c:if test="${user.group=='admin' || user.group=='superAdmin'}">
-						<a href="../admin">我的后台</a>
+						<a href="admin/">我的后台</a>
 					</c:if>
 				</li>
 			  <li class="spacer"> </li>

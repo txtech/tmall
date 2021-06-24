@@ -23,9 +23,6 @@ public class CategoryNamesBelowSearchInterceptor extends HandlerInterceptorAdapt
         if (!(o instanceof HandlerMethod)) {
             return true;
         }
-       /* if (request.getServletContext().getAttribute("cs") != null) {
-            return true;
-        }*/
         Pagination pagination = new Pagination();
         pagination.setCount(7);
         List<Category> cs = categoryService.list("depth", 1, "pagination", pagination, "recommend_gt", 0,"order", "recommend desc, id desc");

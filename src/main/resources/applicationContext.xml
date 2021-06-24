@@ -19,7 +19,7 @@
     <context:annotation-config/>
     <context:component-scan base-package="tmall"/>
     <!-- 加载数据库设置 -->
-    <context:property-placeholder location="classpath:jdbc.properties"/>
+    <context:property-placeholder location="classpath:config.properties"/>
     <!-- 开启AOP -->
     <aop:aspectj-autoproxy proxy-target-class="true"/>
     <!-- 配置Druid -->

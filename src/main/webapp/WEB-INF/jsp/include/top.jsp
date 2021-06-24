@@ -38,8 +38,8 @@
             <c:if test="${!empty user}">
             <a href="myOrder">我的订单</a>
             </c:if>
-            <%--<a href="cart"><span class=" glyphicon glyphicon-shopping-cart redColor"></span>--%>
-                <%--购物车<c:if test="${!empty user}"><strong id="cart-number">0</strong>件</c:if></a>--%>
+            <a href="cart"><span class=" glyphicon glyphicon-shopping-cart redColor"></span>
+                购物车<c:if test="${!empty user}"><strong id="cart-number">0</strong>件</c:if></a>
             <c:if test="${user.group=='admin' || user.group=='superAdmin'}">
             <a href="admin/">我的后台</a>
             </c:if>

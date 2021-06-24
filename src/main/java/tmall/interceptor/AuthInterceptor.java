@@ -6,6 +6,7 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import tmall.annotation.Auth;
 import tmall.exception.AuthException;
 import tmall.pojo.User;
+import tmall.util.StringUtil;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -45,7 +46,12 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
         //根据权限决定是否放行
         if (pageRate > userRate) {
             if (userRate == 0) {
-                response.sendRedirect("/login?refer=/");
+                String contextPath =  request.getContextPath();
+                if(StringUtil.isEmpty(contextPath)){
+                    response.sendRedirect("/login?refer=/");
+                }else{
+                    response.sendRedirect(contextPath+"/login?refer=/");
+                }
                 return false;
             }
             throw new AuthException("您已登录，但是没有权限访问这里");

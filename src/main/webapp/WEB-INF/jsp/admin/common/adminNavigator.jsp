@@ -3,7 +3,7 @@
 <nav class="navbar navbar-default clearfix">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="${contextPath}/">商城后台</a>
+            <a class="navbar-brand" href="#">商城后台</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -15,7 +15,7 @@
                </c:if>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li class=""><a href="/" target="_blank" >网站前台</a></li>
+                <li class=""><a href="${contextPath}/" target="_blank" >网站前台</a></li>
             </ul>
         </div>
     </div>
