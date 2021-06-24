@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: xen
-  Date: 2017/12/5
-  Time: 21:56
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix='fmt' %>
@@ -28,7 +21,7 @@
         <div class="panel panel-default" style="width: 600px;margin:auto">
             <div class="panel-heading">编辑属性</div>
             <div class="panel-body">
-                <form class="form-horizontal" method="get" id="add-form" action="update">
+                <form class="form-horizontal" method="post" id="add-form" enctype="multipart/form-data" action="update">
                     <div class="form-group">
                         <label for="name" class="col-sm-2 control-label">产品名字</label>
                         <div class="col-sm-10">
@@ -46,24 +39,67 @@
                     <div class="form-group">
                         <label for="originalPrice" class="col-sm-2 control-label">原价格</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="originalPrice" name="originalPrice"
-                                   placeholder="请输入原价格" value="${product.originalPrice}">
+                            <c:if test="${user.group=='admin'}">
+                                ${product.originalPrice}
+                                <input type="hidden" class="form-control" id="originalPrice" name="originalPrice"
+                                       placeholder="请输入原价格" value="${product.originalPrice}">
+                            </c:if>
+                            <c:if test="${user.group=='superAdmin'}">
+                                <input type="text" class="form-control" id="originalPrice" name="originalPrice"
+                                       placeholder="请输入原价格" value="${product.originalPrice}">
+                            </c:if>
+
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="nowPrice" class="col-sm-2 control-label">现价格</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="nowPrice" name="nowPrice"
-                                   placeholder="请输入现价格" value="${product.nowPrice}">
+
+                            <c:if test="${user.group=='admin'}">
+                                ${product.nowPrice}
+                                <input type="hidden" class="form-control" id="nowPrice" name="nowPrice"
+                                       placeholder="请输入现价格" value="${product.nowPrice}">
+                            </c:if>
+                            <c:if test="${user.group=='superAdmin'}">
+                                <input type="text" class="form-control" id="nowPrice" name="nowPrice"
+                                       placeholder="请输入现价格" value="${product.nowPrice}">
+                            </c:if>
+
+
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="name" class="col-sm-2 control-label">库存</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="stock" name="stock"
-                                   placeholder="请输入库存" value="${product.stock}">
+
+                            <c:if test="${user.group=='admin'}">
+                                ${product.stock}
+                                <input type="hidden" class="form-control" id="stock" name="stock"
+                                       placeholder="请输入库存" value="${product.stock}">
+                            </c:if>
+                            <c:if test="${user.group=='superAdmin'}">
+                                <input type="text" class="form-control" id="stock" name="stock"
+                                       placeholder="请输入库存" value="${product.stock}">
+                            </c:if>
+
+
                         </div>
                     </div>
+
+                    <div class="form-group">
+                        <label for="name" class="col-sm-2 control-label">收款码</label>
+                        <div class="col-sm-10">
+                            <img src="../../${product.payCode}" height="50px">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name" class="col-sm-2 control-label">新收款码</label>
+                        <div class="col-sm-10">
+                            <input id="payCode" type="file" name="payCode" class="file">
+                        </div>
+                    </div>
+
 
 
                     <input name="cid" value="${product.category.id}" type="hidden">

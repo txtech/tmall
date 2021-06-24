@@ -44,10 +44,6 @@ public class CallbackController {
 
     /**
      * 钱宝充值回调
-     *
-     * @param notifyDto
-     * @param request
-     * @return
      */
     @RequestMapping("notify")
     public Object notify(QianbaoNotifyDto notifyDto, HttpServletRequest request) throws Exception {
@@ -117,7 +113,6 @@ public class CallbackController {
             //验签成功
             if (notifyDto.getResultCode().equals("0000")) {
                 //交易成功
-                //TODO: 更新订单
                 if (order.getSum().multiply(new BigDecimal(100)).compareTo(new BigDecimal(notifyDto.getOrderAmount())) != 0) {
                     logger.error("钱宝充值回调异常, 订单号:{}, 原因:订单金额不匹配", order.getOrderCode());
                     throw new QianbaoCallbackException();

@@ -1,6 +1,8 @@
 package tmall.pojo;
 
 import java.math.BigDecimal;
+
+import lombok.Data;
 import tmall.mapper.CartItemMapper;
 import tmall.pojo.extension.CartItemExtension;
 
@@ -13,6 +15,8 @@ public class CartItem extends CartItemExtension implements tmall.pojo.ORM.POJOMa
      * @mbg.generated
      */
     private Integer uid;
+
+
 
     /**
      *

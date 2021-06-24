@@ -12,7 +12,7 @@ import tmall.util.Pagination;
 import java.rmi.NoSuchObjectException;
 import java.util.Date;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * 该类继承 Service4DAOImpl，会自动识别继承子类的前缀，自动预装载表（使用createCriteria()函数）
@@ -36,10 +36,14 @@ public class BaseServiceImpl<M, E> extends Service4DAOImpl<M, E> implements Base
         }
         Pagination pagination = null;
         //默认按id排序
-        example.setOrderByClause("id asc");
+        example.setOrderByClause("id desc");
         //默认对查询进行两次遍历查询
         int depth = 2;
         for (int i = 0; i < paramAndObjects.length; i += 2) {
+
+            if(Objects.isNull(paramAndObjects[i+1])){
+                continue;
+            }
             if (paramAndObjects[i].equals("order") && paramAndObjects[i + 1] instanceof String) {
                 example.setOrderByClause(paramAndObjects[i + 1].toString());
                 continue;
@@ -100,7 +104,9 @@ public class BaseServiceImpl<M, E> extends Service4DAOImpl<M, E> implements Base
 
     @Override
     public void update(BasePOJO object) throws Exception {
-        mapper.updateByPrimaryKey(object);
+
+        mapper.updateByPrimaryKeySelective(object);
+        //mapper.updateByPrimaryKey(object);
     }
 
     @Override

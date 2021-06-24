@@ -1,12 +1,10 @@
 package tmall.pojo.extension;
-
 import tmall.pojo.Category;
 import tmall.pojo.ProductImage;
 import tmall.pojo.base.BasePOJO;
 import tmall.annotation.ORMAnnotation.JoinColumn;
 import tmall.annotation.ORMAnnotation.ManyToOne;
 import tmall.annotation.ORMAnnotation.OneToMany;
-
 import java.util.List;
 
 public class ProductExtension extends BasePOJO {
@@ -21,6 +19,7 @@ public class ProductExtension extends BasePOJO {
     @OneToMany
     @JoinColumn(name="pid")
     private List<ProductImage> productImages;
+
 
     public ProductImage getImage() {
         return image;

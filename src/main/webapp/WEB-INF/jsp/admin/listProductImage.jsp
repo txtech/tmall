@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: xen
-  Date: 2017/12/5
-  Time: 21:56
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix='fmt' %>
@@ -37,7 +30,7 @@
             <c:if test="${!empty productCoverImage}">
                 <tr>
                     <th scope="row">${productCoverImage.id}</th>
-                    <td><img src="../../../${productImgDir}${productCoverImage.path}" height="50px"></td>
+                    <td><img src="${productCoverImage.pathUrl}" height="50px"></td>
                     <td><a href="delete?id=${productCoverImage.id}" class="delete-button"><span
                             class="glyphicon glyphicon-trash"></span></a></td>
                 </tr>
@@ -86,7 +79,7 @@
             <c:forEach items="${productTopImages}" var="ti" varStatus="vs">
                 <tr>
                     <th scope="row">${ti.id}</th>
-                    <td><img src="../../../${productImgDir}${ti.path}" height="50px"></td>
+                    <td><img src="${ti.pathUrl}" height="50px"></td>
                     <td><a href="  delete?id=${ti.id}" class="delete-button"><span
                             class="glyphicon glyphicon-trash"></span></a></td>
                 </tr>
@@ -135,7 +128,7 @@
             <c:forEach items="${productDetailImages}" var="ti" varStatus="vs">
                 <tr>
                     <th scope="row">${ti.id}</th>
-                    <td><img src="../../../${productImgDir}${ti.path}" height="50px"></td>
+                    <td><img src="${ti.pathUrl}" height="50px"></td>
                     <td><a href="delete?id=${ti.id}" class="delete-button"><span
                             class="glyphicon glyphicon-trash"></span></a></td>
                 </tr>

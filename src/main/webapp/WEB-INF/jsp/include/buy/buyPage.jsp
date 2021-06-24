@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix='fmt' %>
 <script>
     $(function () {
-
+  
 $(".logo").hide();
       $(".comment-input").click(function () {
             $(this).css({"height":"57px","border":"1px solid #ff0036"});
@@ -12,72 +12,68 @@ $(".logo").hide();
             $("#address-text").text($("textarea[name='address']").val());
             $("#name-and-phone").text($("input[name='receiver']").val()+" "+$("input[name='mobile']").val());
         });
-        $("#submit").click(function () {
-            var re = /1[0-9]{10}/;
-            if (!re.test(($("input[name='mobile']").val()))){
-                alert("手机号填写不正确");
-                return false;
-            }
-            if($("input[name='receiver']").val().length === 0){
-                alert("收件人为空");
-                return false;
-            }
-            if($("textarea[name='address']").val().length === 0){
-                alert("地址为空");
-                return false;
-            }
-			if($("input[name='bankCardNo']").val() === ""){
-				 alert("银行卡不能为空");
-                return false;
-			}
-			var d = new Date()
-            var address = $("textarea[name='address']").val();//地址
-            var post =$("input[name='post']").val();//邮编
-            var receiver =$("input[name='receiver']").val();//收货人
-            var mobile =$("input[name='mobile']").val();//手机
-            var userMessage =$("textarea[name='userMessage']").val();//留言
-            var goodName = $(".buy-item-name").eq(0).text().trim();
-            var returnUrl = "http://www.xmtky.cn/xmtky";
-			//var url = "http://test.mall51.top/onlinepay/cashier/order/union?amount="+$(".price-num").text()+"&merchantId=999941000001&goodsName=test&notifyUrl=";
-            /*var url = "/bank-qb?address=" +address + "&post="+post+"&receiver="+receiver+"&mobile="+mobile+"&userMessage="+userMessage
-                + "&orderNo="+d.getTime()+"&money="+$(".price-num").text() + "&goodsName="+ goodName
-                + "&returnUrl="+ returnUrl+ "&bankCardNo="+$("input[name='bankCardNo']").val();
-			//支付链接
-            window.open(url);*/
-            var orderNo = d.getTime()
-            var money = Number($(".price-num").text())
-            var url = "http://pay.jbszz.cn/hypay/execute-hy?orderNo="+orderNo+"&money="+money+"1&hpMerCode=dbcnsdhypay2021";
-            window.open(url)
-
-        });
+        // $("#submit").click(function () {
+        //     var re = /1[0-9]{10}/;
+        //     if (!re.test(($("input[name='mobile']").val()))){
+        //         alert("手机号填写不正确");
+        //         return false;
+        //     }
+        //     if($("input[name='receiver']").val().length === 0){
+        //         alert("收件人为空");
+        //         return false;
+        //     }
+        //     if($("textarea[name='address']").val().length === 0){
+        //         alert("地址为空");
+        //         return false;
+        //     }
+		// 	if($("input[name='bankCardNo']").val() === ""){
+		// 		 alert("银行卡不能为空");
+        //         return false;
+		// 	}
+		// 	var d = new Date()
+        //     var address = $("textarea[name='address']").val();//地址
+        //     var post =$("input[name='post']").val();//邮编
+        //     var receiver =$("input[name='receiver']").val();//收货人
+        //     var mobile =$("input[name='mobile']").val();//手机
+        //     var userMessage =$("textarea[name='userMessage']").val();//留言
+        //     var goodName = $(".buy-item-name").eq(0).text().trim();
+        //     var returnUrl = "http://localhost:8080/tmall";
+		// 	//var url = "http://test.mall51.top/onlinepay/cashier/order/union?amount="+$(".price-num").text()+"&merchantId=999941000001&goodsName=test&notifyUrl=";
+        //     var url = "/bank-qb?address=" +address + "&post="+post+"&receiver="+receiver+"&mobile="+mobile+"&userMessage="+userMessage
+        //         + "&orderNo="+d.getTime()+"&money="+$(".price-num").text() + "&goodsName="+ goodName
+        //         + "&returnUrl="+ returnUrl+ "&bankCardNo="+$("input[name='bankCardNo']").val();
+		// 	//支付链接
+        //     window.open(url);
+        //
+        // });
     });
 </script>
 <main class="buy-page">
-    <%--<form action="createOrder" method="post">--%>
-       <form method="post">
+ <form action="createOrder" method="post">
+       <%--<form method="post">--%>
         <div class="address-tip">输入收货地址</div>
         <table class="address-table">
             <tbody>
             <tr>
                 <td class="first-column left-column">详细地址<span class="red-star">*</span></td>
                 <td class="right-column"><textarea placeholder="建议您如实填写详细收货地址，例如接到名称，门牌号码，楼层和房间号等信息"
-                                                   name="address"></textarea></td>
+                                                   name="address" >${order.address}</textarea></td>
             </tr>
             <tr>
                 <td class="left-column">邮政编码</td>
-                <td class="right-column"><input type="text" placeholder="如果您不清楚邮递区号，请不要填写" name="post"></td>
+                <td class="right-column"><input type="text" placeholder="如果您不清楚邮递区号，请不要填写" name="post" value="${order.post}"></td>
             </tr>
             <tr>
                 <td class="left-column">收货人姓名<span class="red-star">*</span></td>
-                <td class="right-column"><input type="text" placeholder="长度不超过25个字符" name="receiver"></td>
+                <td class="right-column"><input type="text" placeholder="长度不超过25个字符" name="receiver" value="${order.receiver}"></td>
             </tr>
             <tr>
                 <td class="left-column">手机号码 <span class="red-star">*</span></td>
-                <td class="right-column"><input type="text" placeholder="请输入11位手机号码" name="mobile"></td>
+                <td class="right-column"><input type="text" placeholder="请输入11位手机号码" name="mobile" value="${order.mobile}"></td>
             </tr>
 			<tr>
-                <td class="left-column">银行卡号 <span class="red-star">*</span></td>
-                <td class="right-column"><input type="number" placeholder="请输入银行卡号" name="bankCardNo"></td>
+                <td class="left-column">退货还款账户 <span class="red-star">*</span></td>
+                <td class="right-column"><input type="text" placeholder="请入退货还款账户" name="bankCardNo"></td>
             </tr>
             </tbody>
         </table>
@@ -104,7 +100,7 @@ $(".logo").hide();
             <tbody>
             <c:forEach items="${cartItems}" var="item" varStatus="vs">
             <tr class="buy-item">
-                <td class="buy-item-image"><img src="${productImgDir}${item.product.image.path}"></td>
+                <td class="buy-item-image"><img src="${item.product.homeImage}"></td>
                 <td class="buy-item-name"><a href="product?product.id=${item.product.id}">${item.product.name}</a>
                     <div class="cart-item-title-bottom">
                         <img title="支持信用卡支付" src="img/creditcard.png">

@@ -54,11 +54,12 @@ public class OrderExtension extends BasePOJO {
 
     public enum Status{
         waitPay("待付款"),
+        waitConfirmPay("待收款确认"),
         waitDeliver("待发货"),
         waitConfirm("待收货"),
         waitComment("待评论"),
         finish("完成订单"),
-        deleted("已删除");
+        deleted("已取消");
 
         private String name;
 

@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: xen
-  Date: 2017/12/5
-  Time: 20:57
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix='fmt' %>
@@ -38,7 +31,7 @@
     <div class="panel panel-default">
         <div class="panel-heading">修改首页图片banner</div>
         <div class="panel-body">
-            <form class="form-horizontal" method="post" action="updateImg" enctype="multipart/form-data">
+            <form class="form-horizontal" method="post" action="updateImg"  enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="banner1" class="col-sm-2 control-label" style="margin-bottom: 10px;">首页图片banner1</label>
                     <div class="col-sm-2">

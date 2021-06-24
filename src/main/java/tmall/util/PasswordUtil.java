@@ -27,6 +27,6 @@ public class PasswordUtil {
         return result;
     }
     public static void main(String[] args){
-        System.out.println(encryptPassword("xi753951"));
+        System.out.println(encryptPassword("chengyi2021@888"));
     }
 }

@@ -1,15 +1,8 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: xen
-  Date: 2017/12/3
-  Time: 16:13
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix='fmt' %>
 
-<c:set var="title" value="分类管理"/>
+<c:set var="title" value="类目管理"/>
 <%@include file="common/adminHeader.jsp" %>
 <c:set var="light" value="1"/>
 <%@include file="common/adminNavigator.jsp" %>
@@ -24,12 +17,15 @@
         <tr>
             <th scope="col">#</th>
             <th scope="col">推荐级</th>
-            <th scope="col">图片</th>
-            <th scope="col">分类名称</th>
-            <th scope="col">属性管理</th>
-            <th scope="col">产品管理</th>
-            <th scope="col">编辑</th>
-            <th scope="col">删除</th>
+            <th scope="col">类目图片</th>
+            <th scope="col">类目名称</th>
+            <th scope="col">商品管理</th>
+            <c:if test="${user.group=='superAdmin'}">
+                <th scope="col">属性管理</th>
+                <th scope="col">编辑</th>
+                <th scope="col">删除</th>
+            </c:if>
+
         </tr>
         </thead>
         <tbody>
@@ -40,10 +36,12 @@
                 <td>${c.recommend}</td>
                 <td><img src="../../../${categoryImgDir}${c.imgPath}" height="40px"></td>
                 <td>${c.name}</td>
-                <td><a href="../property/list?cid=${c.id}"><span class="glyphicon glyphicon-list-alt"></span></a></td>
                 <td><a href="../product/list?cid=${c.id}"><span class="glyphicon glyphicon-shopping-cart"></span></a></td>
+                <c:if test="${user.group=='superAdmin'}">
+                <td><a href="../property/list?cid=${c.id}"><span class="glyphicon glyphicon-list-alt"></span></a></td>
                 <td><a href="edit?id=${c.id}"><span class="glyphicon glyphicon-edit"></span></a></td>
                 <td><a href="delete?id=${c.id}" class="delete-button"><span class="glyphicon glyphicon-trash"></span></a></td>
+                </c:if>
             </tr>
         </c:forEach>
         </tbody>
@@ -51,11 +49,9 @@
 </div>
 
 
-
-
 <%@include file="common/adminPage.jsp" %>
 
-
+<c:if test="${user.group=='superAdmin'}">
 <div class="container">
     <div class="row" >
         <div class="panel panel-default" style="width: 650px;margin:auto">
@@ -93,5 +89,6 @@
         </div>
     </div>
 </div>
+</c:if>
 
 <%@include file="common/adminFooter.jsp" %>

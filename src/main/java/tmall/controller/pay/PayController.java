@@ -39,13 +39,6 @@ public class PayController  extends FrontBaseController {
 
     /**
      * 跳转钱宝充值界面
-     * @param orderNo
-     * @param money
-     * @return
-     * @method: bankHy
-     * @Description:
-     * @author : dingzhj
-     * @date 2019年6月14日 上午10:42:57
      */
     @RequestMapping("bank-qb")
     @ResponseBody

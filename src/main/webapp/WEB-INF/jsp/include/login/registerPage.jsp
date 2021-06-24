@@ -6,7 +6,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
 <main class="register">
     <script>
         var msg = "${msg}";
@@ -21,7 +20,7 @@
                    return false;
                }
                if($("#password").val() == "" || $("#name").val() == ""){
-                   alert("用户名或密码为空");
+                   alert("请输入用户名或密码");
                    return false;
                }
                return true;
@@ -32,23 +31,15 @@
 			});
         });
     </script>
-
-
     <form action="registerAdd" method="post" id="form">
     <table class="register-table">
         <tbody>
-           <tr>
-            <td colspan="2" class="register-tip" style="font-size: 20px">会员商场</td>
-        </tr>
         <tr>
-            <td colspan="2" class="register-tip">设置会员名</td>
+            <td colspan="2" class="register-tip" style="font-size: 20px; text-align:center;">会员注册</td>
         </tr>
         <tr>
             <td class="left-col">登录名</td>
             <td class="right-col"><input placeholder="会员名一旦设置成功，无法修改" name="name" id="name"></td>
-        </tr>
-        <tr>
-            <td colspan="2" class="register-tip">设置密码</td>
         </tr>
         <tr>
             <td  class="left-col">登陆密码</td>
@@ -67,6 +58,7 @@
         </tbody>
     </table>
     </form>
-    <button id="agreement">用户协议</button>
-
+    <div class="ReUser">
+      <button id="agreement">用户协议</button>
+    </div>
 </main>

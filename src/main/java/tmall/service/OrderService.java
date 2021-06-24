@@ -11,5 +11,8 @@ public interface OrderService extends BaseService{
     /**
      * 添加订单
      */
-    public void createOrder(Order order ,List<CartItem> cartItems) throws Exception;
+    void createOrder(Order order ,List<CartItem> cartItems) throws Exception;
+
+    void addThirdShopItem(Order order,Integer shopId);
+
 }

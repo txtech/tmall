@@ -179,7 +179,7 @@ public class Mapper4ORM {
             return;
         }
         Class clazz = object.getClass();
-        // 获取所有 ManyToOne注解的Filed
+        // 获取所有 Enumerated
         List<Field> result = getFieldsEquals(clazz, Enumerated.class);
         for (Field field : result) {
             //获取Enum对应的，String类型的变量名

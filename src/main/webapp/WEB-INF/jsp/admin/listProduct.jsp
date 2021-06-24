@@ -1,21 +1,11 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: xen
-  Date: 2017/12/5
-  Time: 21:56
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix='fmt' %>
-
 <c:set var="title" value="分类管理 - 产品管理"/>
 <%@include file="common/adminHeader.jsp" %>
 <c:set var="light" value="1"/>
 <%@include file="common/adminNavigator.jsp" %>
-
-
-<div class="container" >
+<div class="container">
     <ol class="breadcrumb">
         <li><a href="../category/list">所有分类</a></li>
         <li>${category.name}</li>
@@ -31,6 +21,7 @@
             <th scope="col">原价格</th>
             <th scope="col">现价格</th>
             <th scope="col">库存</th>
+            <th scope="col">收款码</th>
             <th scope="col">图片管理</th>
             <th scope="col">设置属性值</th>
             <th scope="col">编辑</th>
@@ -42,16 +33,21 @@
         <c:forEach items="${products}" var="p" varStatus="vs">
             <tr>
                 <th scope="row">${p.id}</th>
-                <td><img src="../../../${productImgDir}${p.image.path}" height="30px"></td>
+                <td><img src="${p.homeImage}" height="30px"></td>
                 <td>${p.name}</td>
                 <td>${p.subTitle}</td>
                 <td>${p.originalPrice}</td>
                 <td>${p.nowPrice}</td>
                 <td>${p.stock}</td>
+                <td>
+                    <img src="${p.extras.path}" height="30px">
+                </td>
                 <td><a href="image/list?pid=${p.id}"><span class="glyphicon glyphicon-picture"></span></a></td>
                 <td><a href="propertyValue/edit?pid=${p.id}"><span class="glyphicon glyphicon-th-list"></span></a></td>
                 <td><a href="edit?id=${p.id}"><span class="glyphicon glyphicon-edit"></span></a></td>
-                <td><a href="delete?id=${p.id}" class="delete-button"><span class="glyphicon glyphicon-trash"></span></a></td>
+                <td><a href="delete?id=${p.id}" class="delete-button">
+                    <span class="glyphicon glyphicon-trash"></span></a>
+                </td>
             </tr>
         </c:forEach>
         </tbody>
@@ -60,12 +56,15 @@
 
 <%@include file="common/adminPage.jsp" %>
 
+
+
+<c:if test="${user.group=='superAdmin'}">
 <div class="container">
-    <div class="row" >
+    <div class="row">
         <div class="panel panel-default" style="width: 600px;margin:auto">
-            <div class="panel-heading">新增属性</div>
+            <div class="panel-heading">新增产品</div>
             <div class="panel-body">
-                <form class="form-horizontal" method="get" id="add-form" action="add">
+                <form class="form-horizontal" method="post" id="add-form" action="add" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="name" class="col-sm-2 control-label">产品名字</label>
                         <div class="col-sm-10">
@@ -102,6 +101,13 @@
                         </div>
                     </div>
 
+                    <div class="form-group">
+                        <label for="name" class="col-sm-2 control-label">收款码</label>
+                        <div class="col-sm-10">
+                            <input id="payCode" type="file" name="payCode" class="file">
+                        </div>
+                    </div>
+
                     <input name="cid" value="${category.id}" type="hidden">
                     <div class="form-group">
                         <div style="text-align: center">
@@ -113,4 +119,4 @@
         </div>
     </div>
 </div>
-
+</c:if>

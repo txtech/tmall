@@ -12,9 +12,25 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <lombok.version>1.18.2</lombok.version>
+    <dependency.version.jackson>2.8.8</dependency.version.jackson>
   </properties>
 
+
   <dependencies>
+    <!-- bff -->
+
+
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>${lombok.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>25.1-jre</version>
+    </dependency>
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
@@ -169,12 +185,71 @@
       <artifactId>hutool-core</artifactId>
       <version>4.6.10</version>
     </dependency>
+    <dependency>
+      <groupId>com.aliyun</groupId>
+      <artifactId>aliyun-java-sdk-chatbot</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.aliyun</groupId>
+      <artifactId>aliyun-java-sdk-core</artifactId>
+      <version>4.5.2</version>
+    </dependency>
+    <dependency>
+      <groupId>io.springfox</groupId>
+      <artifactId>springfox-swagger2</artifactId>
+      <version>2.6.1</version>
+    </dependency>
+    <dependency>
+      <groupId>io.springfox</groupId>
+      <artifactId>springfox-swagger-ui</artifactId>
+      <version>2.6.1</version>
+    </dependency>
+
+
+    <!-- Jackson依赖库 -->
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-core</artifactId>
+      <version>${dependency.version.jackson}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>${dependency.version.jackson}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-annotations</artifactId>
+      <version>${dependency.version.jackson}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.datatype</groupId>
+      <artifactId>jackson-datatype-jsr310</artifactId>
+      <version>${dependency.version.jackson}</version>
+    </dependency>
+
+    <!-- 以下是bean复制工具 -->
+    <dependency>
+      <groupId>commons-beanutils</groupId>
+      <artifactId>commons-beanutils</artifactId>
+      <version>1.7.0</version>
+    </dependency>
+
   </dependencies>
 
   <!--配置Tomcat热部署，直接把全部网站在本地POST上服务器-->
   <build>
-    <finalName>tmall</finalName>
+    <!--<finalName>tmall</finalName>-->
     <plugins>
+      <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-war-plugin</artifactId>
+      <version>2.6</version>
+      <configuration>
+      <failOnMissingWebXml>false</failOnMissingWebXml>
+      </configuration>
+      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -224,5 +299,29 @@
 
   </build>
 
+
+  <!--<build>-->
+    <!--<plugins>-->
+      <!--&lt;!&ndash; web.xml is missing and <failOnMissingWebXml> is set to true &ndash;&gt;-->
+      <!--<plugin>-->
+        <!--<groupId>org.apache.maven.plugins</groupId>-->
+        <!--<artifactId>maven-war-plugin</artifactId>-->
+        <!--<version>2.6</version>-->
+        <!--<configuration>-->
+          <!--<failOnMissingWebXml>false</failOnMissingWebXml>-->
+        <!--</configuration>-->
+      <!--</plugin>-->
+      <!--&lt;!&ndash; 在项目中的pom.xml指定jdk版本 &ndash;&gt;-->
+      <!--<plugin>-->
+        <!--<groupId>org.apache.maven.plugins</groupId>-->
+        <!--<artifactId>maven-compiler-plugin</artifactId>-->
+        <!--<version>3.1</version>-->
+        <!--&lt;!&ndash;<configuration>&ndash;&gt;-->
+          <!--&lt;!&ndash;<source>1.7</source>&ndash;&gt;-->
+          <!--&lt;!&ndash;<target>1.7</target>&ndash;&gt;-->
+        <!--&lt;!&ndash;</configuration>&ndash;&gt;-->
+      <!--</plugin>-->
+    <!--</plugins>-->
+  <!--</build>-->
 
 </project>

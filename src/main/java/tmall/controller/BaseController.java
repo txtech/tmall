@@ -36,6 +36,8 @@ public class BaseController {
     public CartItemService cartItemService;
     @Autowired
     public FileUtil fileUtil;
+    @Autowired
+    public ShopService shopService;
 
     /**
      * 全局异常处理

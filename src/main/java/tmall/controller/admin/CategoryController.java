@@ -1,5 +1,7 @@
 package tmall.controller.admin;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,9 +18,11 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/admin/category")
+@Api("权限")
 public class CategoryController extends AdminBaseController {
     @Auth(User.Group.admin)
     @RequestMapping("list")
+    @ApiOperation("分页查询")
     public String list(Model model, Pagination pagination) throws Exception {
         List<Category> categories = categoryService.list("pagination", pagination, "order", "recommend desc, id desc");
         model.addAttribute("categories", categories);

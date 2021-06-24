@@ -211,6 +211,12 @@ public class ProductImageExample implements BaseExample {
             return (Criteria) this;
         }
 
+        public Criteria andBizTypeEqualTo(String bizType) {
+            addCriterion("biz_type =", bizType, "bizType");
+            return (Criteria) this;
+        }
+
+
         public Criteria andIdNotEqualTo(Integer value) {
             addCriterion("id <>", value, "id");
             return (Criteria) this;

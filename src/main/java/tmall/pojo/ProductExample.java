@@ -211,6 +211,10 @@ public class ProductExample implements BaseExample {
             addCriterion("id =", value, "id");
             return (Criteria) this;
         }
+        public Criteria andParentIdEqualTo(Integer parentId) {
+            addCriterion("parent_id =", parentId, "parentId");
+            return (Criteria) this;
+        }
 
         public Criteria andIdNotEqualTo(Integer value) {
             addCriterion("id <>", value, "id");
@@ -591,6 +595,12 @@ public class ProductExample implements BaseExample {
             addCriterion("stock =", value, "stock");
             return (Criteria) this;
         }
+
+        public Criteria andShopIdEqualTo(Integer value) {
+            addCriterion("shop_id =", value, "shopId");
+            return (Criteria) this;
+        }
+
 
         public Criteria andStockNotEqualTo(Integer value) {
             addCriterion("stock <>", value, "stock");

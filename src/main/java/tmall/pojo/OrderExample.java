@@ -212,6 +212,11 @@ public class OrderExample implements BaseExample {
             return (Criteria) this;
         }
 
+        public Criteria andShopIdEqualTo(Integer value) {
+            addCriterion("shop_id =", value, "shopId");
+            return (Criteria) this;
+        }
+
         public Criteria andIdNotEqualTo(Integer value) {
             addCriterion("id <>", value, "id");
             return (Criteria) this;
@@ -731,6 +736,12 @@ public class OrderExample implements BaseExample {
             addCriterion("mobile =", value, "mobile");
             return (Criteria) this;
         }
+
+        public Criteria andShopIdEqualTo(String value) {
+            addCriterion("shop_id =", value, "shopId");
+            return (Criteria) this;
+        }
+
 
         public Criteria andMobileNotEqualTo(String value) {
             addCriterion("mobile <>", value, "mobile");

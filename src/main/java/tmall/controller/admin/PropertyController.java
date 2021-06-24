@@ -20,8 +20,7 @@ public class PropertyController extends AdminBaseController {
     @Auth(User.Group.admin)
     @RequestMapping("list")
     public String list(Integer cid, Model model, Pagination pagination) throws Exception {
-        List<Category> properties = propertyService
-                .list("cid",cid);
+        List<Category> properties = propertyService.list("cid",cid);
         Category category = (Category) categoryService.get(cid);
         model.addAttribute("properties", properties);
         model.addAttribute("category",category);

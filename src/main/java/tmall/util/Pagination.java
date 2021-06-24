@@ -43,7 +43,7 @@ public class Pagination {
 
     public Pagination() {
         this.start = 0;
-        this.count = 5;
+        this.count = 20;
     }
 
     public Pagination(int start, int count, int total) {

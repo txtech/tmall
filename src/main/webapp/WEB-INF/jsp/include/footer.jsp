@@ -15,7 +15,6 @@
             }
             return true;
         });
-
         //购物指南
         $("#gw").click(function(){
             window.open("js/notice.html");
@@ -83,9 +82,7 @@
             <a href="#nowhere3"></a>
             <a href="#nowhere4"></a>
         </div>
-
-
-        <div class="footer-desc" id="footer-desc">
+        <!-- <div class="footer-desc" id="footer-desc">
             <div class="desc-column">
                 <span class="desc-column-title" id="gw" style=" cursor: pointer">购物指南</span>
                 <%--  <a href="#nowhere">免费注册</a>
@@ -125,7 +122,7 @@
                 <%--<a href="#nowhere"><img src="img/shouji.png"></a>--%>
                 <%--</div>--%>
             </div>
-        </div>
+        </div> -->
 </footer>
 
 <footer class="footer-bottom">
@@ -165,7 +162,7 @@
                 <a target="_blank" href="https://beian.miit.gov.cn/"><span>网络文化经营许可证： ${(empty SEOCode)?code:SEOCode}-1</span></a>
                 <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=35021202000344"><img src="img/beian.png"> 35021202000344</a>
                 <br>
-                <span>${(empty websiteAddress)?'厦门市同安区二环南路692号407室':websiteAddress}</span>
+                <span>${(empty websiteAddress)?'安徽省芜湖市二环南路室':websiteAddress}</span>
                 <div class="copy-right-year">Copyright© 20020-2025 ${(empty SEOTitle)?title:SEOTitle} 版权所有</div>
             </div>
         </div>

@@ -1,8 +1,11 @@
 package tmall.service;
 
+import tmall.pojo.Shop;
 import tmall.pojo.User;
 
 public interface UserService extends BaseService{
+
+    Boolean addMechart(User user, Shop shop)throws Exception;
     /**
      *
      * @param rawUser 从浏览器中获取的原始user
