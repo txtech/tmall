@@ -5,13 +5,10 @@
 <htmL>
 <head>
     <meta charset="UTF-8">
-    <%
-        String contextPath = request.getContextPath();
-        request.setAttribute("contextPath", contextPath);
-    %>
     <title>${(empty SEOTitle)?title:SEOTitle}</title>
     <meta name="keywords" content="${keywords}" />
     <meta name="description" content="${description}"/>
+    <c:set var="contextPath" value="${pageContext.request.contextPath}" />
     <link rel="stylesheet" href="${contextPath}/css/bootstrap.min.css">
     <link rel="stylesheet" href="${contextPath}/css/style.css">
     <script src="${contextPath}/js/jquery-3.2.1.min.js"></script>

@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: xen
-  Date: 2017/12/3
-  Time: 16:02
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix='fmt' %>
@@ -13,6 +6,7 @@
 <head>
     <title>${title} - 商城后台</title>
     <meta charset="utf-8">
+    <c:set var="contextPath" value="${pageContext.request.contextPath}" />
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script>
