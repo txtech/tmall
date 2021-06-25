@@ -4,7 +4,6 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:aop="http://www.springframework.org/schema/aop"
        xmlns:tx="http://www.springframework.org/schema/tx"
-
        xsi:schemaLocation="
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context-3.0.xsd
@@ -76,7 +75,6 @@
                 </bean>
             </array>
         </property>
-
     </bean>
 
     <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
@@ -87,15 +85,10 @@
         <property name="basePackage" value="tmall.mapper"/>
     </bean>
 
-
-
     <bean id="transactionManager"
           class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource" />
     </bean>
 
     <tx:annotation-driven transaction-manager="transactionManager" />
-
-
-
 </beans>

@@ -4,13 +4,11 @@
 
 <c:set var="title" value="分类管理 - 属性管理"/>
 <%@include file="common/adminHeader.jsp" %>
-
 <%@include file="common/adminNavigator.jsp" %>
-
 
 <div class="container" >
     <ol class="breadcrumb">
-        <li><a href="../../../admin/category/list">分类管理</a></li>
+        <li><a href="${contextPath}/admin/category/list">分类管理</a></li>
         <li>${category.name}</li>
         <li class="active">属性管理</li>
     </ol>

@@ -30,31 +30,9 @@
 	<script src="${contextPath}/home2/common.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
+<%@include file="../include/top.jsp"%>
 <body class="gray_f5" style="padding-bottom: 375px; min-height: 550px;">
     <div class="tpshop-tm-hander">
-		<div class="top-hander index-top">
-		  <div class="w1224 pr clearfix">
-			<div class="fl nologin">
-				<a href="login" id="login">欢迎登录</a>
-				<a class="blue" href="register">免费注册</a>
-			</div>
-			<ul class="top-ri-header fr ">
-			  <li class="top-min-cart border-box" id="hd-my-cart">
-				<a target="_blank" href="cart">我的购物车</a>
-			  </li>
-			  <li class="spacer"></li>
-			  <li>
-				<a target="_blank" href="myOrder">我的订单</a>
-			  </li>
-				<li>
-					<c:if test="${user.group=='admin' || user.group=='superAdmin'}">
-						<a href="admin/">我的后台</a>
-					</c:if>
-				</li>
-			  <li class="spacer"> </li>
-			</ul>
-		  </div>
-		</div>
        <div class="nav-middan-z w1224 clearfix border-box pr">
         <div class="top-right">
           <div class="nav clearfix border-box">
@@ -235,7 +213,7 @@
 				<div class="contact-us border-box">
 					<div class="right-company clearfix">
 						<div class="right-company-top clearfix">
-							<div class="phone"><i></i><span class="phone-num">${phone}</span></div>
+							<div class="phone"><i></i><span class="phone-num">联系方式：${phone}</span></div>
 						</div>
 					</div>
 				</div>

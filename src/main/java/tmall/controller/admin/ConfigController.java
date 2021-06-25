@@ -24,7 +24,10 @@ public class ConfigController extends AdminBaseController {
         List<Config> list = configService.list();
         List<Config> configs = new ArrayList<>();
         for (Config config : list) {
-            if (config.getName().equalsIgnoreCase("idex_privateKey") || config.getName().equalsIgnoreCase("index_svMerchNo")) {
+            if(config == null){
+                continue;
+            }
+            if (config.getName().contains("banner_")) {
                 continue;
             }
             configs.add(config);

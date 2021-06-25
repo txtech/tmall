@@ -24,6 +24,7 @@ import java.util.stream.Collectors;
 @Controller
 @RequestMapping("/admin/order")
 public class OrderController extends AdminBaseController {
+
     @Auth(User.Group.admin)
     @RequestMapping("list")
     public String list(Model model, Pagination pagination, HttpSession session) throws Exception {

@@ -29,8 +29,7 @@
                     <div class="form-group">
                         <label for="name" class="col-sm-2 control-label">分类名字</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="name" name="name"
-                                   placeholder="请输入分类名字" value="${category.name}">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="请输入分类名字" value="${category.name}">
                         </div>
                     </div>
                     <div class="form-group">
@@ -42,8 +41,7 @@
                     <div class="form-group">
                         <label for="recommend" class="col-sm-2 control-label">推荐优先级</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="recommend" name="recommend"
-                                   placeholder="默认为0不推荐，首页不显示产品大图。优先级越高排越前" value="${category.recommend}">
+                            <input type="text" class="form-control" id="recommend" name="recommend" placeholder="默认为0不推荐，首页不显示产品大图。优先级越高排越前" value="${category.recommend}">
                         </div>
                     </div>
                     <input type="hidden" name="id" value="${category.id}">

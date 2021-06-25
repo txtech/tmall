@@ -7,6 +7,7 @@ import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import tmall.annotation.Auth;
 import tmall.common.enums.BizTypeEnum;
+import tmall.common.enums.FilePathEnum;
 import tmall.pojo.Product;
 import tmall.pojo.ProductImage;
 import tmall.pojo.User;
@@ -63,7 +64,7 @@ public class ProductImageController extends AdminBaseController {
     @Auth(User.Group.admin)
     public String add(Integer pid, String type, UploadedImageFile uploadedImageFile) throws Exception {
         log.info("add img");
-        UploadFileInfo uploadFileInfo= fileUtil.uploadFile(uploadedImageFile,"product");
+        UploadFileInfo uploadFileInfo= fileUtil.uploadFile(uploadedImageFile, FilePathEnum.PRODUCT.getCode());
         ProductImage productImage = new ProductImage();
         productImage.setPid(pid);
         productImage.setType(type);

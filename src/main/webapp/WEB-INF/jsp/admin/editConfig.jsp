@@ -22,36 +22,7 @@
                 </div>
                 <div class="form-group">
                     <div style="text-align: center">
-                        <button type="submit" class="btn btn-success btn-sm">保存</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">修改首页图片banner</div>
-        <div class="panel-body">
-            <form class="form-horizontal" method="post" action="updateImg"  enctype="multipart/form-data">
-                <div class="form-group">
-                    <label for="banner1" class="col-sm-2 control-label" style="margin-bottom: 10px;">首页图片banner1</label>
-                    <div class="col-sm-2">
-                        <input type="hidden" value="banner1" name="banner">
-                        <input id="banner1" name="image" type="file" class="file">
-                    </div>
-                    <div class="col-sm-2">
-                        <button type="submit" class="btn btn-success">保存banner1</button>
-                    </div>
-                </div>
-            </form>
-            <form class="form-horizontal" method="post" action="updateImg" enctype="multipart/form-data">
-                <div class="form-group">
-                    <label for="banner2" class="col-sm-2 control-label" style="margin-bottom: 10px;">首页图片banner2</label>
-                    <div class="col-sm-2">
-                        <input type="hidden" value="banner2" name="banner">
-                        <input id="banner2" name="image" type="file" class="file">
-                    </div>
-                    <div class="col-sm-2">
-                        <button type="submit" class="btn btn-success">保存banner2</button>
+                        <button type="submit" class="btn btn-success"> 保存设置 </button>
                     </div>
                 </div>
             </form>

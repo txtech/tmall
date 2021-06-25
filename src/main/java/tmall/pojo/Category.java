@@ -69,4 +69,14 @@ public class Category extends CategoryExtension implements tmall.pojo.ORM.POJOMa
     public void setRecommend(Integer recommend) {
         this.recommend = recommend;
     }
+
+    private String pathUrl;
+
+    public String getPathUrl() {
+        return pathUrl;
+    }
+
+    public void setPathUrl(String pathUrl) {
+        this.pathUrl = pathUrl;
+    }
 }

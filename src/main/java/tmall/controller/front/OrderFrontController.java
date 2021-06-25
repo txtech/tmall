@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import tmall.annotation.Auth;
 import tmall.common.convert.ProductConvert;
+import tmall.common.enums.FilePathEnum;
 import tmall.common.enums.OrderReverseStatusEnum;
 import tmall.exception.AuthException;
 import tmall.exception.ParameterException;
@@ -235,11 +236,10 @@ public class OrderFrontController extends FrontBaseController {
             throw new ParameterException("请上传付款记录");
         }
         String payRecordfile = UuidUtil.getTimeBasedUuid().toString();
-        String type = "product";
         UploadedImageFile uploadedImageFile = new UploadedImageFile();
         uploadedImageFile.setImage(payRecord);
         //fileUtil.saveImg(uploadedImageFile, type, payRecordfile);
-        UploadFileInfo uploadFileInfo= fileUtil.uploadFile(uploadedImageFile,type);
+        UploadFileInfo uploadFileInfo= fileUtil.uploadFile(uploadedImageFile, FilePathEnum.PRODUCT.getCode());
         User user = (User)session.getAttribute("user");
         Order order = (Order)orderService.get(oid);
         checkUser(user, order.getUser());

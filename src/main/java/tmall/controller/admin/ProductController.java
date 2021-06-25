@@ -12,6 +12,7 @@ import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import tmall.annotation.Auth;
 import tmall.common.convert.ProductConvert;
+import tmall.common.enums.FilePathEnum;
 import tmall.controller.request.AdminProductRequest;
 import tmall.pojo.Category;
 import tmall.pojo.Product;
@@ -49,14 +50,11 @@ public class ProductController extends AdminBaseController {
 
     @RequestMapping("add")
     @Auth(User.Group.admin)
-    public String add(AdminProductRequest addProductRequest,
-                      HttpSession session) throws Exception {
-
+    public String add(AdminProductRequest addProductRequest,HttpSession session) throws Exception {
         User user = (User)session.getAttribute("user");
         Integer shopId = user.getShopId();
         Product p = ProductConvert.requestToProduct(addProductRequest);
         uploadImg(addProductRequest, p);
-
         p.setCommentCount(0);
         p.setCreateDate(new Date());
         p.setSaleCount(0);
@@ -66,12 +64,11 @@ public class ProductController extends AdminBaseController {
     }
 
     private void uploadImg(AdminProductRequest productRequest, Product p) {
-
         try {
             if (!StringUtil.isEmpty(productRequest.getPayCode().getOriginalFilename())) {
                 UploadedImageFile uploadedImageFile = new UploadedImageFile();
                 uploadedImageFile.setImage(productRequest.getPayCode());
-                UploadFileInfo uploadFileInfo= fileUtil.uploadFile(uploadedImageFile,"product");
+                UploadFileInfo uploadFileInfo= fileUtil.uploadFile(uploadedImageFile, FilePathEnum.PRODUCT.getCode());
                 Map<String,Object> map= p.getExtras();
                 map.put("path", uploadFileInfo.getFullPath());
                 p.setExtras(map);
@@ -93,7 +90,6 @@ public class ProductController extends AdminBaseController {
     @RequestMapping("update")
     @Auth(User.Group.admin)
     public String update(AdminProductRequest updateProductRequest) throws Exception {
-
         Product p = (Product)productService.get(updateProductRequest.getId());
         p.setName(updateProductRequest.getName());
         p.setSubTitle(updateProductRequest.getSubTitle());
