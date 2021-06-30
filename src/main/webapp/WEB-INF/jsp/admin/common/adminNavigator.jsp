@@ -13,6 +13,7 @@
                     <li class="${light==2?'active':''}"><a  href="${contextPath}/admin/user/list">用户管理</a></li>
                     <li class="${light==4?'active':''}"><a href="${contextPath}/admin/config/edit">网站设置</a></li>
                     <li class="${light==5?'active':''}"><a href="${contextPath}/admin/banner/edit">Banner设置</a></li>
+                    <li class="${light==6?'active':''}"><a href="${contextPath}/admin/logo/edit">Logo设置</a></li>
                </c:if>
             </ul>
             <ul class="nav navbar-nav navbar-right">

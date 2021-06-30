@@ -1769,7 +1769,7 @@ main.login .login-content{
     height:600px;
     width:1190px;
     margin: 0 auto;
-    background: url("../img/login.png") no-repeat;
+   /* background: url("../img/login.png") no-repeat;*/
     position: relative;
 }
 

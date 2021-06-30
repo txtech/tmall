@@ -63,7 +63,7 @@ public class UserFrontController extends FrontBaseController {
         user.setName(name);
         user.setPassword(requestDto.getPassword());
         user.setGroup(User.Group.admin);
-        userService.addMechart(user, shop);
+        userService.addMechart(user,shop);
         return "user/registerSuccess";
     }
 
@@ -84,7 +84,6 @@ public class UserFrontController extends FrontBaseController {
                 UploadedImageFile uploadedImageFile = new UploadedImageFile();
                 uploadedImageFile.setImage(payCodeFile);
                 fileUtil.saveImg(uploadedImageFile, type, newImagName);
-
                 shop.setPayCode("/" + relativeFolderPath + newImagName);
             }
             MultipartFile shopLogFile = requestDto.getShopLog();

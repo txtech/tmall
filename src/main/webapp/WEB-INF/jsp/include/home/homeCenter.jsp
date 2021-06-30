@@ -14,10 +14,9 @@
             </c:if>
         </c:forEach>
     </div>
-    <!-- <c:if test="${phone != ''}">
-    <a style="float: right!important;line-height: 35px;font-size: 16px;color: black;"
-       class="glyphicon glyphicon glyphicon-earphone">  ${phone}</a>
-    </c:if> -->
+    <c:if test="${phone != ''}">
+        <a style="float: right!important;line-height: 35px;font-size: 16px;color: black;" class="glyphicon glyphicon glyphicon-earphone">  ${phone}</a>
+    </c:if>
 </section>
 
 <section class="carousel">

@@ -11,12 +11,12 @@
         <input type="text" value="请输入想要的商品名称" name="keyword">
         <button class="search-button" type="submit">搜索</button>
         </form>
-        <!-- <ul class="search-below">
+        <ul class="search-below">
             <c:forEach items="${categories}" var="c" varStatus="vs">
                 <c:if test="${vs.count>=1 and vs.count<=8}">
                     <li><a href="category?id=${c.id}">${c.name}</a></li>
                 </c:if>
             </c:forEach>
-        </ul> -->
+        </ul>
     </div>
 </header>

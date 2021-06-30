@@ -42,18 +42,4 @@ public class ConfigController extends AdminBaseController {
         session.removeAttribute("productImgDir");
         return "redirect:edit";
     }
-
-    @RequestMapping("updateImg")
-    public String add(String banner,UploadedImageFile uploadedImageFile) throws Exception {
-        if(StringUtil.isEmpty(banner)){
-            return "redirect:edit";
-        }
-        if(banner.equalsIgnoreCase("banner1")){
-            fileUtil.saveImg(uploadedImageFile, "banner", "1.jpg");
-        }else{
-            String URL = "pictures/banner/1.jpg";
-            fileUtil.saveImg(uploadedImageFile, "banner", "2.jpg");
-        }
-        return "redirect:edit";
-    }
 }

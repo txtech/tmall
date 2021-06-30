@@ -57,9 +57,8 @@ public class PayController  extends FrontBaseController {
         order.setUser(user);
         orderService.createOrder(order, cartItems);
 
-        Map<String, String> config = configService.map();
-        String hpMerCode = config.get("index_svMerchNo");
-        String privateKey = config.get("idex_privateKey");
+        String hpMerCode ="";
+        String privateKey = "";
         if (privateKey == null) {
             return "FAILED";
         }

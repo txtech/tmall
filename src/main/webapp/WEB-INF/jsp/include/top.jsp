@@ -4,15 +4,14 @@
 <c:if test="${!empty user}">
     <script>
     $(function() {
-    $.get("cartNumber",function(result) {
-        var number = Number(result);
-        if(number>-1){
-            $("#cart-number").text(number);
-    }
+        $.get("cartNumber",function(result) {
+            var number = Number(result);
+            if(number>-1){
+                $("#cart-number").text(number);
+        }
     });
     $("#logout").attr("href","logout?refer="+window.location.href);
     });
-
     </script>
 </c:if>
 
@@ -22,7 +21,7 @@
             <c:if test="${empty home}">
             <span style="margin-left: 0"><span class=" glyphicon glyphicon-home redColor" style="margin-left: 0"></span><a href="./">首页</a></span>
             </c:if>
-            <span>欢迎来到${website_name}</span>
+            <span>欢迎来到 ${website_name}</span>
             <c:if test="${!empty user}">
                 ${user.name}
                 <a href="#" id="logout">退出</a>

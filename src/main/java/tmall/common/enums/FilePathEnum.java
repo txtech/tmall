@@ -8,7 +8,8 @@ public enum FilePathEnum {
 
     PRODUCT("pictures/product/","产品图片"),
     SHOP("pictures/shop/","店铺图片"),
-    BANNER("pictures/banner/","店铺图片"),
+    BANNER("pictures/banner/","Banner图片"),
+    LOGO("pictures/logo/","Logo图片"),
     CATEGORY("pictures/category/","类目图片");
 
     private String code;

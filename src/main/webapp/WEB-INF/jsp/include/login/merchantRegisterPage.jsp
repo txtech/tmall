@@ -32,7 +32,6 @@
             <tr>
                 <td colspan="2" class="register-tip" style="font-size: 20px; text-align:center;">商家注册</td>
             </tr>
-
             <tr>
                 <td class="left-col">登录名</td>
                 <td class="right-col"><input placeholder="会员名一旦设置成功，无法修改" name="name" id="name"></td>
@@ -43,12 +42,12 @@
             </tr>
             <tr>
                 <td class="left-col">店铺Log</td>
-                <td class="right-col"><input id="shopLog"  type="file" name="shopLog" class="file"></td>
+                <td class="right-col"><input id="shopLog" type="file" name="shopLog" class="file"></td>
             </tr>
             <tr>
                 <td class="left-col">收款码</td>
 
-                <td class="right-col"><input id="payCode"   type="file" name="payCode" class="file"></td>
+                <td class="right-col"><input id="payCode" type="file" name="payCode" class="file"></td>
             </tr>
             <tr>
                 <td colspan="2" class="register-tip">设置密码</td>
@@ -59,7 +58,7 @@
             </tr>
             <tr>
                 <td class="left-col">密码确认</td>
-                <td class="right-col"><input type="password" placeholder="请再次输入你的密码" name="rePassword" id="repeatpassword"></td>
+                <td class="right-col"><input type="password" placeholder="请再次输入你的密码" name="rePassword"id="repeatpassword"></td>
             </tr>
             <tr>
                 <td colspan="2" class="button-td">
@@ -71,7 +70,7 @@
         </table>
     </form>
     <div class="ReUser">
-      <button id="agreement">商家合作协议</button>
+        <button id="agreement">商家合作协议</button>
     </div>
 </main>
 

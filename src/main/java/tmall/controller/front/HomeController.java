@@ -41,6 +41,20 @@ public class HomeController extends FrontBaseController {
             return "home/home2";
         }else if("3".equals(websiteMode)) {
             return "home/home3";
+        } else if("4".equals(websiteMode)) {
+            return "home/home4";
+        } else if("5".equals(websiteMode)) {
+            return "home/home5";
+        } else if("6".equals(websiteMode)) {
+            return "home/home6";
+        } else if("7".equals(websiteMode)) {
+            return "home/home7";
+        } else if("8".equals(websiteMode)) {
+            return "home/home8";
+        } else if("9".equals(websiteMode)) {
+            return "home/home9";
+        } else if("10".equals(websiteMode)) {
+            return "home/home10";
         } else {
             return "home/home1";
         }

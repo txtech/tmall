@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import tmall.annotation.Auth;
 import tmall.annotation.Nullable;
 import tmall.common.enums.FilePathEnum;
-import tmall.pojo.Category;
 import tmall.pojo.Config;
 import tmall.pojo.User;
 import tmall.util.StringUtil;
@@ -18,8 +17,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-@RequestMapping("/admin/banner")
-public class BannerController extends AdminBaseController {
+@RequestMapping("/admin/logo")
+public class LogoController extends AdminBaseController {
 
     @Auth(User.Group.admin)
     @RequestMapping("edit")
@@ -30,13 +29,13 @@ public class BannerController extends AdminBaseController {
             if(config == null){
                 continue;
             }
-            if (!config.getName().contains("banner_")) {
+            if (!config.getName().contains("logo_")) {
                 continue;
             }
             configs.add(config);
         }
         model.addAttribute("configs", configs);
-        return "admin/editBanner";
+        return "admin/editLogo";
     }
 
     @Auth(User.Group.admin)
@@ -44,14 +43,14 @@ public class BannerController extends AdminBaseController {
     public String edit(Integer id, Model model, HttpSession session) throws Exception {
         Config config = (Config) configService.get(id);
         model.addAttribute(config);
-        return "admin/editBanner2";
+        return "admin/editLogo2";
     }
 
     @RequestMapping("update")
     public String update(Integer id,@Nullable UploadedImageFile uploadedImageFile,HttpSession session) throws Exception {
         Config config = (Config) configService.get(id);
         if(uploadedImageFile != null){
-            UploadFileInfo uploadFileInfo = fileUtil.uploadFile(uploadedImageFile, FilePathEnum.BANNER.getCode());
+            UploadFileInfo uploadFileInfo = fileUtil.uploadFile(uploadedImageFile, FilePathEnum.LOGO.getCode());
             if(uploadFileInfo !=null){
                 config.setValue(uploadFileInfo.getFullPath());
             }

@@ -14,6 +14,7 @@ import java.util.Map;
 
 @Service
 public class ConfigServiceImpl extends BaseServiceImpl<ConfigMapper,ConfigExample> implements ConfigService {
+
     @Override
     public Map<String, String> map() throws Exception{
         List<Config> configs = list();

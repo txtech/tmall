@@ -1,14 +1,5 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: xen
-  Date: 2017/12/9
-  Time: 9:30
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <footer class="footer-bottom">
-
-
     <div class="foot-content login">
        <!--  <div class="copyright" id="copyright">
             <div class="white-link login-text">
@@ -45,7 +36,6 @@
                 <span><a href="#nowhere">12318举报 </a></span><br>
                 <span>互联网药品信息服务资质证书编号：<a href="#nowhere">浙-（经营性）-2012-0005</a></span>
                 <div class="copy-right-year">© 2003-2017 TMALL.COM 版权所有</div>
-
             </div> -->
         </div>
     </div>

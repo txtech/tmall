@@ -4,7 +4,7 @@
 
 <header class="buy-header">
     <a href="/" class="logo">
-       <!--  <img src="img/logo2.png"> -->
+        <img src="img/logo.png">
     </a>
     <div class="pull-right">
         <img src="img/buyflow_1.png">

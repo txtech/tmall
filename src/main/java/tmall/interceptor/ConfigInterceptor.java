@@ -26,6 +26,9 @@ public class ConfigInterceptor extends HandlerInterceptorAdapter {
         if(!StringUtil.isEmpty(indexCode) && indexCode.endsWith("-1")){
             indexCode = indexCode.substring(0,indexCode.lastIndexOf("-1"));
         }
+        request.getServletContext().setAttribute("logo2", config.get("logo_2"));
+        request.getServletContext().setAttribute("logo1", config.get("logo_1"));
+        request.getServletContext().setAttribute("banner1", config.get("banner_1"));
         request.getServletContext().setAttribute("phone", config.get("index_phone"));
         request.getServletContext().setAttribute("websiteMode",config.get("website_mode"));
         request.getServletContext().setAttribute("SEOCode", indexCode);
