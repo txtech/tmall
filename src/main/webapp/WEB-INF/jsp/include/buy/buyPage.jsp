@@ -82,7 +82,7 @@ $(".logo").hide();
             <thead>
             <tr>
                 <th class="shop-and-wangwang" colspan="2">
-                    <img src="img/tmall-small.png" class="tmall-small-png">
+                    <%--<img src="img/tmall-small.png" class="tmall-small-png">--%>
                     <a href="#nowhere" class="market-link">店铺：${website_name}</a>
                     <a href="#nowhere" class="wangwang-link"> <span class="wangwang-small"></span> </a>
                 </th>

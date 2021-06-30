@@ -3,8 +3,6 @@
     <div class="pay-tip">扫一扫付款</div>
     <div class="pay-num">￥${order.sum}</div>
     <img src="${payCode}" class="alipay-img" width="350px" height="600px">
-    <%--<a href="payed?oid=${order.id}"><button class="confirm-pay">免费支付</button></a>--%>
-
     <form action="payed" method="post" id="payForm" enctype="multipart/form-data">
 
         <table class="register-table">

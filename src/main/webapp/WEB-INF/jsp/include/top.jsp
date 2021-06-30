@@ -1,10 +1,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix='fmt' %>
+<c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <c:if test="${!empty user}">
     <script>
     $(function() {
-        $.get("cartNumber",function(result) {
+        $.get("${contextPath}/cartNumber",function(result) {
+            if(result == ''){
+                return;
+            }
             var number = Number(result);
             if(number>-1){
                 $("#cart-number").text(number);

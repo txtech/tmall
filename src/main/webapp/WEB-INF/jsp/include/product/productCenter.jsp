@@ -20,9 +20,6 @@
             ${product.name}
         </div>
         <div class="price">
-           <!--  <div class="sales">
-                <img src="img/gouwu.png">全站实物商品通用
-            </div> -->
             <div class="top-line">
                 <span class="o-price left">价格</span>
                 <span class="o-price-num">￥${product.originalPrice}</span>

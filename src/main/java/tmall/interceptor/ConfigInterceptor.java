@@ -29,6 +29,10 @@ public class ConfigInterceptor extends HandlerInterceptorAdapter {
         request.getServletContext().setAttribute("logo2", config.get("logo_2"));
         request.getServletContext().setAttribute("logo1", config.get("logo_1"));
         request.getServletContext().setAttribute("banner1", config.get("banner_1"));
+        request.getServletContext().setAttribute("banner2", config.get("banner_2"));
+        request.getServletContext().setAttribute("banner3", config.get("banner_3"));
+        request.getServletContext().setAttribute("banner4", config.get("banner_4"));
+        request.getServletContext().setAttribute("banner5", config.get("banner_5"));
         request.getServletContext().setAttribute("phone", config.get("index_phone"));
         request.getServletContext().setAttribute("websiteMode",config.get("website_mode"));
         request.getServletContext().setAttribute("SEOCode", indexCode);

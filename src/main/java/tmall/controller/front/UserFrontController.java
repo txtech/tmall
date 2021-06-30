@@ -10,9 +10,11 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.util.HtmlUtils;
 import tmall.annotation.Auth;
 import tmall.annotation.Nullable;
+import tmall.common.enums.FilePathEnum;
 import tmall.controller.request.ShopRequestDto;
 import tmall.pojo.*;
 import tmall.service.ConfigService;
+import tmall.util.UploadFileInfo;
 import tmall.util.UploadedImageFile;
 
 import javax.servlet.http.HttpSession;
@@ -56,7 +58,7 @@ public class UserFrontController extends FrontBaseController {
         }
         if (msg != null) {
             model.addAttribute("msg", msg);
-            return "memberRegister";
+            return "user/memberRegister";
         }
         Shop shop = buildShopInfo(requestDto);
         User user = new User();
@@ -67,6 +69,9 @@ public class UserFrontController extends FrontBaseController {
         return "user/registerSuccess";
     }
 
+    /**
+     * 商家用户注册
+     */
     private Shop buildShopInfo(ShopRequestDto requestDto) {
         Shop shop = new Shop();
         shop.setShopName(requestDto.getShopName());
@@ -83,8 +88,14 @@ public class UserFrontController extends FrontBaseController {
 
                 UploadedImageFile uploadedImageFile = new UploadedImageFile();
                 uploadedImageFile.setImage(payCodeFile);
-                fileUtil.saveImg(uploadedImageFile, type, newImagName);
-                shop.setPayCode("/" + relativeFolderPath + newImagName);
+                //fileUtil.saveImg(uploadedImageFile, type, newImagName);
+                //shop.setPayCode("/" + relativeFolderPath + newImagName);
+                if(uploadedImageFile !=null){
+                    UploadFileInfo uploadFileInfo= fileUtil.uploadFile(uploadedImageFile, FilePathEnum.LOGO.getCode());
+                    if(uploadFileInfo !=null){
+                        shop.setPayCode(uploadFileInfo.getFullPath());
+                    }
+                }
             }
             MultipartFile shopLogFile = requestDto.getShopLog();
             if (Objects.nonNull(shopLogFile)) {
@@ -94,8 +105,14 @@ public class UserFrontController extends FrontBaseController {
                 String newImagName = ShopLogFileName + ext;
                 UploadedImageFile uploadedImageFile = new UploadedImageFile();
                 uploadedImageFile.setImage(shopLogFile);
-                fileUtil.saveImg(uploadedImageFile, type, newImagName);
-                shop.setShopLog("/" + relativeFolderPath + newImagName);
+                //fileUtil.saveImg(uploadedImageFile, type, newImagName);
+                //shop.setShopLog("/" + relativeFolderPath + newImagName);
+                if(uploadedImageFile !=null){
+                    UploadFileInfo uploadFileInfo= fileUtil.uploadFile(uploadedImageFile, FilePathEnum.LOGO.getCode());
+                    if(uploadFileInfo !=null){
+                        shop.setShopLog(uploadFileInfo.getFullPath());
+                    }
+                }
             }
         } catch (Exception e) {
             log.info("upload.file.error={}", e);
@@ -117,7 +134,7 @@ public class UserFrontController extends FrontBaseController {
         }
         if (msg != null) {
             model.addAttribute("msg", msg);
-            return "memberRegister";
+            return "user/memberRegister";
         }
         User user = new User();
         user.setName(name);

@@ -30,28 +30,14 @@ public class FileUtil implements ServletContextAware {
     @Value("${oss.upload.project:}")
     private String uploadProject;
 
-    private static  final String categoryPath = "pictures/category/";
-    private static  final String productPath = "pictures/product/";
-
     @Override
     public void setServletContext(ServletContext servletContext) {
         this.servletContext = servletContext;
     }
 
-    public void saveImg(UploadedImageFile uploadedImageFile, String type, String imgName) throws Exception {
-        Map<String, String> config = configService.map();
-        String relativeFolderPath = config.get("path_" + type + "_img");
-        File imageFolder = new File(getUploadPath() + relativeFolderPath);
-        if (!imageFolder.exists()) {
-            imageFolder.mkdirs();
-        }
-        File imageFile = new File(imageFolder, imgName);
-        imageFile.setReadable(true);
-        imageFile.setWritable(true);
-        uploadedImageFile.getImage().transferTo(imageFile);
-    }
-
-
+    /**
+     * 上传文件保存
+     */
     public UploadFileInfo uploadFile(UploadedImageFile uploadedFile,String filePath) throws Exception {
         try {
             String relativeFolderPath = getUploadPath() + uploadProject + filePath;
@@ -91,6 +77,19 @@ public class FileUtil implements ServletContextAware {
             return domain + "/";
         }
     }
+
+     /*public void saveImg(UploadedImageFile uploadedImageFile, String type, String imgName) throws Exception {
+        Map<String, String> config = configService.map();
+        String relativeFolderPath = config.get("path_" + type + "_img");
+        File imageFolder = new File(getUploadPath() + relativeFolderPath);
+        if (!imageFolder.exists()) {
+            imageFolder.mkdirs();
+        }
+        File imageFile = new File(imageFolder, imgName);
+        imageFile.setReadable(true);
+        imageFile.setWritable(true);
+        uploadedImageFile.getImage().transferTo(imageFile);
+    }*/
 
     public void setDomain(String domain) {
         this.domain = domain;

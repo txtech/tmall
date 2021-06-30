@@ -3,9 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix='fmt' %>
 
 <header class="buy-header">
-    <a href="/" class="logo">
-        <img src="img/logo.png">
-    </a>
+    <a href="/" class="logo"><img src="${logo1}"></a>
     <div class="pull-right">
         <img src="img/buyflow_1.png">
     </div>

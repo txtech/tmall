@@ -4,10 +4,9 @@ import org.springframework.util.CollectionUtils;
 import tmall.controller.request.AdminProductRequest;
 import tmall.pojo.Product;
 import tmall.pojo.ProductImage;
+import tmall.util.StringUtil;
 
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -32,19 +31,25 @@ public class ProductConvert {
 
     }
 
+    /**
+     * 设置首页主图
+     */
     public  static void  productConvert(List<Product> productList){
         if(CollectionUtils.isEmpty(productList)){
             return;
         }
-        //设置首页主图
         productList.stream().forEach(product -> {
-            List<ProductImage> productImageList=  product.getProductImages();
+            List<ProductImage> productImageList = product.getProductImages();
             if(!CollectionUtils.isEmpty(productImageList)){
-                Map<String,List<ProductImage>> productImageMap= productImageList.stream().collect(
-                    Collectors.groupingBy(e->e.getType()));
-                List<ProductImage> coverList= productImageMap.get("cover");
+                Map<String,List<ProductImage>> productImageMap = productImageList.stream().collect(Collectors.groupingBy(e->e.getType()));
+                List<ProductImage> coverList = productImageMap.get("cover");
                 if(!CollectionUtils.isEmpty(coverList)){
-                    product.setHomeImage(coverList.get(0).getPathUrl());
+                    for (ProductImage productImg : coverList) {
+                        if(productImg!=null && !StringUtil.isEmpty(productImg.getPathUrl())){
+                            String pathUrl = productImg.getPathUrl();
+                            product.setHomeImage(pathUrl);
+                        }
+                    }
                 }
             }
         });

@@ -62,9 +62,17 @@ public class ProductImageController extends AdminBaseController {
 
     @RequestMapping("add")
     @Auth(User.Group.admin)
-    public String add(Integer pid, String type, UploadedImageFile uploadedImageFile) throws Exception {
+    public String add(Integer pid, String type, UploadedImageFile uploadedImageFile,Model model) throws Exception {
         log.info("add img");
+        if(uploadedImageFile == null){
+            model.addAttribute("msg","不能为空");
+            return "403";
+        }
         UploadFileInfo uploadFileInfo= fileUtil.uploadFile(uploadedImageFile, FilePathEnum.PRODUCT.getCode());
+        if(uploadFileInfo == null){
+            model.addAttribute("msg","不能为空");
+            return "403";
+        }
         ProductImage productImage = new ProductImage();
         productImage.setPid(pid);
         productImage.setType(type);

@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <header class="search">
-    <a href="./" class="logo"><img src="img/logo.png" /></a>
+    <a href="./" class="logo"><img src="${logo1}" /></a>
     <div class="search">
         <form action="search" >
         <input type="text" placeholder="搜索 ${website_name} 商品/品牌/店铺" name="keyword">

@@ -41,7 +41,8 @@
             <tbody>
             <tr>
                 <td width="200px">订单编号：</td>
-                <td>${order.orderCode} <img height="14px" src="img/tmall-small.png"></td>
+                <%-- <td>${order.orderCode} <img height="14px" src="img/tmall-small.png"></td>--%>
+                <td>${order.orderCode}</td>
             </tr>
             <tr>
                 <td width="200px">卖家昵称：</td>
