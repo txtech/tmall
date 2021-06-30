@@ -97,13 +97,15 @@
 		<ul class="swiper-inner banner-inner">
 			<li class="item" style="background: rgb(0, 0, 0) none repeat scroll 0% 0%; width: 1903px;">
 				<a class="item-pic" href="" style="margin-left: 0px;">
-					<img class="w-100" src="pictures/banner/1.jpg" title="" alt="">
+					<c:if test="${banner1 != ''}">
+						<img class="w-100" src="${banner1}" title="" alt="">
+					</c:if>
 				</a>
 			</li>
 		</ul>
 		<div class="pagination"></div>
-		<a class="swiper-control left-btn t-all" href="javascript:;" style="display: none;"></a>
-		<a class="swiper-control right-btn t-all" href="javascript:;" style="display: none;"></a>
+		<a class="swiper-control left-btn t-all" href="javascript:;" style="display:none;"></a>
+		<a class="swiper-control right-btn t-all" href="javascript:;" style="display:none;"></a>
 	</div>
 
 	<div class="w1224 clearfix">
@@ -115,7 +117,7 @@
 						<c:forEach items="${c.products}" var="p" varStatus="vs">
 							<div class="flash-sale-item animate-scale fl">
 								<a href="product?id=${p.id}">
-									<div class="goods-pic border-box"><img class="w-100 lazy" src="${productImgDir}${p.image.path}"></div>
+									<div class="goods-pic border-box"><img class="w-100 lazy" src="${p.homeImage}"></div>
 								</a>
 								<div class="goods-con border-box">
 									<div class="goods-name border-box ellipsis-1">${p.name}</div>
@@ -151,7 +153,7 @@
 									<c:forEach items="${c.products}" var="p" varStatus="vs">
 										<c:if test="${vs.index==0}">
 											<div class="floor-adv fl">
-												<a class="adv-big" href=""><img class="w-100" src="${productImgDir}${p.image.path}" alt=""></a>
+												<a class="adv-big" href=""><img class="w-100" src="${p.homeImage}" alt=""></a>
 											</div>
 										</c:if>
 										<div class="floor-hotcate">
@@ -168,7 +170,7 @@
 										<c:if test="${vs.index<6}">
 										<div class="floor-goods-item animate-scale fl">
 											<a href="product?id=${p.id}">
-												<div class="goods-pic"><img class="w-100" src="${productImgDir}${p.image.path}" alt=""></div>
+												<div class="goods-pic"><img class="w-100" src="${p.homeImage}" alt=""></div>
 											</a>
 											<div class="goods-con border-box">
 												<div class="goods-name border-box">${p.name}</div>
@@ -186,7 +188,7 @@
 										<c:forEach items="${c.products}" var="p" varStatus="vs">
 											<a class="floor-recommend-item item" href="product?id=${p.id}">
 												<div class="goods-pic item-pic">
-													<img class="w-100" src="${productImgDir}${p.image.path}" alt=""></div>
+													<img class="w-100" src="${p.homeImage}" alt=""></div>
 												<div class="goods-con border-box">
 													<div class="goods-name">${p.name}</div>
 													<div class="goods-price ellipsis-1">
