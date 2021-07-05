@@ -36,9 +36,6 @@
             </c:if>
         </c:forEach>
     </div>
-    <c:if test="${phone != ''}">
-        <a style="float: right!important;line-height: 35px;font-size: 16px;color: black;" class="glyphicon glyphicon glyphicon-earphone">  ${phone}</a>
-    </c:if>
 </section>
 
 <section class="carousel">
@@ -98,7 +95,7 @@
                         <a href="product?id=${p.id}">
                             <div class="item">
                                 <img src="${p.homeImage}">
-                                <div class="item-title">${p.name}${p}</div>
+                                <div class="item-title">${p.name}</div>
                                 <div class="item-price">￥${p.nowPrice}</div>
                             </div>
                         </a>
@@ -107,6 +104,7 @@
             </div>
         </c:if>
     </c:forEach>
+
     <img src="img/end.png" class="end-png" id="endpng">
 </main>
 
